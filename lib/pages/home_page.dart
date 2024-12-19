@@ -14,6 +14,8 @@ import '../widgets/cable.dart';
 import '../widgets/pague_en_casa.dart';
 import '../widgets/price.dart'; // Importa el archivo price.dart
 import '../widgets/formulario.dart'; // Importa el archivo formulario.dart
+import '../widgets/mensaje.dart'; // Importa el botón de WhatsApp
+import '../widgets/llamada.dart'; // Importa el botón de llamada
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -84,6 +86,10 @@ class HomePage extends StatelessWidget {
                   const Price(), // Aquí se incluye el widget Price
                   const SizedBox(height: 40),
                   const FormularioWidget(), // Incluye el widget del formulario
+                  const SizedBox(height: 40),
+                  const MensajeButton(), // Agrega el botón de WhatsApp aquí
+                  const SizedBox(height: 40),
+                  const LlamadaButton(), // Agrega el botón de llamada aquí
                 ],
               );
             } else {
@@ -127,6 +133,10 @@ class HomePage extends StatelessWidget {
                   const Price(), // Aquí también se incluye en pantallas pequeñas
                   const SizedBox(height: 40),
                   const FormularioWidget(), // Incluye el widget del formulario
+                  const SizedBox(height: 40),
+                  const MensajeButton(), // Agrega el botón de WhatsApp aquí
+                  const SizedBox(height: 40),
+                  const LlamadaButton(), // Agrega el botón de llamada aquí
                 ],
               );
             }

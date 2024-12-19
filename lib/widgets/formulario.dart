@@ -99,9 +99,26 @@ class FormularioWidgetState extends State<FormularioWidget> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Formulario de Información',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/mini_image.png', // Ruta de la imagen en assets
+                    width: 50, // Tamaño de la imagen
+                    height: 50,
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: const Text(
+                      'Usted se encuentra en el proceso de compra. Por favor diligencie el formulario con su dirección, barrio y ciudad para hacer llegar su pedido a la puerta de su casa.',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.start,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(height: 16),
               buildTextFormField(
@@ -132,6 +149,12 @@ class FormularioWidgetState extends State<FormularioWidget> {
                 label: 'Ciudad',
                 fieldKey: 'ciudad',
                 inputType: TextInputType.text,
+              ),
+              const SizedBox(height: 16),
+              const Text(
+                'Nota importante: Haremos una llamada para confirmar el envío de las cámaras. El domicilio es sin costo, el pago es contraentrega, y por favor asegúrese de contar con el dinero antes de presionar "Comprar". Entregamos los equipos probados en el lugar, siempre y cuando haya conexión a energía.',
+                style: TextStyle(fontSize: 14, color: Colors.black54),
+                textAlign: TextAlign.center,
               ),
               const SizedBox(height: 16),
               Center(
