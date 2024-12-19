@@ -6,11 +6,12 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 var logger = Logger();
 
 class PurchaseButton extends StatefulWidget {
-  const PurchaseButton({super.key});
+  final String buttonText; // Texto del botón
+  const PurchaseButton(
+      {super.key, this.buttonText = 'Comprar'}); // Valor por defecto
 
   @override
-  PurchaseButtonState createState() =>
-      PurchaseButtonState(); // Hacer público el estado
+  PurchaseButtonState createState() => PurchaseButtonState();
 }
 
 class PurchaseButtonState extends State<PurchaseButton> {
@@ -131,7 +132,9 @@ class PurchaseButtonState extends State<PurchaseButton> {
         foregroundColor: Colors.white,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
       ),
-      child: const Text('Comprar', style: TextStyle(fontSize: 18)),
+      child: Text(widget.buttonText,
+          style: const TextStyle(
+              fontSize: 18)), // Usa el texto personalizado del botón
     );
   }
 }

@@ -13,6 +13,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   logger: ^1.0.0
   supabase_flutter: ^0.2.5  # Asegúrate de usar la última versión
+  carousel_slider: ^5.0.0
 
 dev_dependencies:
   flutter_test:
@@ -21,6 +22,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
   assets:
-    - assets/images/
+    - assets/images/1.png
+    - assets/images/2.png
+    - assets/images/3.png
+    - assets/images/4.png
+    - assets/images/5.png
+    # Puedes añadir más imágenes si es necesario

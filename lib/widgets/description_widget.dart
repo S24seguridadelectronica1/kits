@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
-import 'purchase_button.dart'; // Importar el widget del botón de compra
+import 'purchase_button.dart'; // Ruta correcta
+
+// Título centralizado
+const String descriptionTitle = 'Kit de Cámaras de Seguridad';
+const String imagePath =
+    'assets/images/1.png'; // Ruta centralizada de la imagen
 
 class DescriptionWidget extends StatelessWidget {
   final double fontSizeTitle;
   final double fontSizeText;
 
   const DescriptionWidget({
-    super.key, // Usar super parámetro aquí
+    super.key,
     required this.fontSizeTitle,
     required this.fontSizeText,
   });
@@ -17,7 +22,7 @@ class DescriptionWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Kit de Cámaras de Seguridad',
+          descriptionTitle,
           style:
               TextStyle(fontSize: fontSizeTitle, fontWeight: FontWeight.bold),
         ),
@@ -27,7 +32,7 @@ class DescriptionWidget extends StatelessWidget {
           style: TextStyle(fontSize: fontSizeText),
         ),
         const SizedBox(height: 20),
-        const PurchaseButton(), // Usar el nuevo widget
+        const PurchaseButton(),
       ],
     );
   }
