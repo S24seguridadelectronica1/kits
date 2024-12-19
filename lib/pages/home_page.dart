@@ -13,6 +13,7 @@ import '../widgets/bornera.dart';
 import '../widgets/cable.dart';
 import '../widgets/pague_en_casa.dart';
 import '../widgets/price.dart'; // Importa el archivo price.dart
+import '../widgets/formulario.dart'; // Importa el archivo formulario.dart
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -81,6 +82,8 @@ class HomePage extends StatelessWidget {
                   const PagueEnCasa(),
                   const SizedBox(height: 40),
                   const Price(), // Aquí se incluye el widget Price
+                  const SizedBox(height: 40),
+                  const FormularioWidget(), // Incluye el widget del formulario
                 ],
               );
             } else {
@@ -122,6 +125,8 @@ class HomePage extends StatelessWidget {
                   const PagueEnCasa(),
                   const SizedBox(height: 40),
                   const Price(), // Aquí también se incluye en pantallas pequeñas
+                  const SizedBox(height: 40),
+                  const FormularioWidget(), // Incluye el widget del formulario
                 ],
               );
             }
