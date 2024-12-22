@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final String imagePath =
-        'assets/images/1.png'; // Declara la ruta de la imagen aquí
+        'assets/images/1.webp'; // Declara la ruta de la imagen aquí
 
     return Scaffold(
       appBar: AppBar(
@@ -45,8 +45,8 @@ class HomePage extends StatelessWidget {
                     children: [
                       Image.asset(
                         imagePath,
-                        width: screenWidth * 0.5,
-                        height: screenWidth * 0.5,
+                        width: screenWidth * 0.8,
+                        height: screenWidth * 0.8,
                         fit: BoxFit.cover,
                       ),
                       const SizedBox(width: 50),
@@ -99,8 +99,8 @@ class HomePage extends StatelessWidget {
                 children: [
                   Image.asset(
                     imagePath,
-                    width: screenWidth * 0.5,
-                    height: screenWidth * 0.5,
+                    width: screenWidth * 0.8,
+                    height: screenWidth * 0.8,
                     fit: BoxFit.cover,
                   ),
                   const SizedBox(height: 20),
