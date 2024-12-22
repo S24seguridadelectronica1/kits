@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final String imagePath =
-        'assets/images/your_image.png'; // Declara la ruta de la imagen aquí
+        'assets/images/1.png'; // Declara la ruta de la imagen aquí
 
     return Scaffold(
       appBar: AppBar(
