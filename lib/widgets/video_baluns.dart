@@ -20,7 +20,7 @@ class Videobaluns extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image.asset(
-                    'assets/videobaluns.png', // Reemplaza con tu ruta de imagen
+                    'assets/images/22.webp', // Reemplaza con tu ruta de imagen
                     width: screenWidth * 0.4, // Tamaño dinámico
                     height: screenWidth * 0.3, // Tamaño dinámico
                     fit: BoxFit.cover,

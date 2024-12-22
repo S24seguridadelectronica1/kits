@@ -103,7 +103,7 @@ class FormularioWidgetState extends State<FormularioWidget> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Image.asset(
-                    'assets/mini_image.png', // Ruta de la imagen en assets
+                    'assets/images/1.webp', // Ruta de la imagen en assets
                     width: 50, // Tamaño de la imagen
                     height: 50,
                   ),

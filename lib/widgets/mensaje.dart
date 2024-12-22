@@ -25,7 +25,7 @@ class MensajeButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(
             vertical: 16.0,
             horizontal: 32.0), // Más espacio alrededor del texto
-        textStyle: const TextStyle(fontSize: 60), // Aumenta el tamaño del texto
+        textStyle: const TextStyle(fontSize: 30), // Aumenta el tamaño del texto
         minimumSize: Size(double.infinity,
             60), // Asegura que el botón ocupe todo el ancho y tenga una altura mayor
       ),

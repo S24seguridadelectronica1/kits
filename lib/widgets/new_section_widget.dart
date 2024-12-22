@@ -4,11 +4,12 @@ import 'purchase_button.dart'; // Importa el botón de compra
 
 const String newSectionTitle = 'Sistema de Alarma';
 const List<String> newSectionImagePaths = [
-  'assets/images/1.webp',
   'assets/images/2.webp',
   'assets/images/3.webp',
   'assets/images/4.webp',
   'assets/images/5.webp',
+  'assets/images/6.webp',
+  'assets/images/7.webp',
 ];
 const String newSectionDescription =
     'Este sistema de alarma proporciona una protección adicional con sensores de movimiento y notificaciones en tiempo real.';

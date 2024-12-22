@@ -29,7 +29,8 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
-        title: const Text('Mi Aplicación'),
+        title: const Text(
+            'Servicio contra entrega en Bucaramanga y su área metropolitana'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),

@@ -4,11 +4,14 @@ import 'purchase_button.dart'; // Importa el botón de compra
 
 const String camarasTitle = 'Cámaras de Seguridad';
 const List<String> camarasImagePaths = [
-  'assets/images/camara1.png',
-  'assets/images/camara2.png',
-  'assets/images/camara3.png',
-  'assets/images/camara4.png',
-  'assets/images/camara5.png',
+  'assets/images/8.webp',
+  'assets/images/9.webp',
+  'assets/images/10.webp',
+  'assets/images/11.webp',
+  'assets/images/12.webp',
+  'assets/images/13.webp',
+  'assets/images/14.webp',
+  'assets/images/15.webp',
 ];
 const String camarasDescription =
     'Las cámaras de seguridad ofrecen una vigilancia constante para proteger tu hogar y tu negocio, con alta definición y visión nocturna.';
