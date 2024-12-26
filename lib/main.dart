@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:logger/logger.dart';
 import 'pages/home_page.dart';
+import 'pages/kit_8_camaras/pages_kit_8/kit_82ce56d0t.dart'; // Importa la página del kit 8
 
 // Instancia de logger
 var logger = Logger();
@@ -25,12 +26,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Mi Aplicación', // Título centralizado
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-        useMaterial3: true,
-      ),
-      home: const HomePage(), // Apunta a HomePage como la pantalla principal
+      title: 'Mi App de Cámaras de Seguridad',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      initialRoute: '/', // Ruta inicial
+      routes: {
+        '/': (context) => const HomePage(), // Página principal
+        '/kit_8': (context) => const Kit8Page(), // Página del kit 8
+      },
     );
   }
 }

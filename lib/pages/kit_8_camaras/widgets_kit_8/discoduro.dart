@@ -2,20 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'purchase_button.dart'; // Importa el botón de compra
 
-const String newSectionTitle = 'Sistema de Alarma';
-const List<String> newSectionImagePaths = [
-  'assets/images/2.webp',
-  'assets/images/3.webp',
-  'assets/images/4.webp',
-  'assets/images/5.webp',
-  'assets/images/6.webp',
-  'assets/images/7.webp',
+const String discoDuroTitle = 'Discos Duros';
+const List<String> discoDuroImagePaths = [
+  'assets/images/16.webp',
+  'assets/images/17.webp',
+  'assets/images/18.webp',
+  'assets/images/19.webp',
+  'assets/images/20.webp',
 ];
-const String newSectionDescription =
-    'Este sistema de alarma proporciona una protección adicional con sensores de movimiento y notificaciones en tiempo real.';
+const String discoDuroDescription =
+    'Los discos duros ofrecen un almacenamiento fiable y rápido para tus datos más importantes, con opciones de alta capacidad y rendimiento.';
 
-class NewSectionWidget extends StatelessWidget {
-  const NewSectionWidget({super.key});
+class DiscoDuroWidget extends StatelessWidget {
+  const DiscoDuroWidget({super.key});
 
   void _showFullScreenImage(BuildContext context, int initialIndex) {
     Navigator.push(
@@ -23,8 +22,8 @@ class NewSectionWidget extends StatelessWidget {
       MaterialPageRoute(
         builder: (context) => FullScreenImageCarousel(
           initialIndex: initialIndex,
-          imagePaths: newSectionImagePaths,
-          description: newSectionDescription,
+          imagePaths: discoDuroImagePaths,
+          description: discoDuroDescription,
         ),
       ),
     );
@@ -41,13 +40,13 @@ class NewSectionWidget extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Texto descriptivo de la nueva sección
+            // Texto descriptivo de los discos duros
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    newSectionTitle,
+                    discoDuroTitle,
                     style: TextStyle(
                       fontSize: screenWidth * 0.08, // Ajustar tamaño del título
                       fontWeight: FontWeight.bold,
@@ -55,7 +54,7 @@ class NewSectionWidget extends StatelessWidget {
                   ),
                   SizedBox(height: screenHeight * 0.02),
                   Text(
-                    newSectionDescription,
+                    discoDuroDescription,
                     style: TextStyle(
                       fontSize: screenWidth *
                           0.04, // Ajustar tamaño de la descripción
@@ -71,7 +70,7 @@ class NewSectionWidget extends StatelessWidget {
               child: Column(
                 children: [
                   CarouselSlider.builder(
-                    itemCount: newSectionImagePaths.length,
+                    itemCount: discoDuroImagePaths.length,
                     itemBuilder:
                         (BuildContext context, int index, int realIndex) {
                       return GestureDetector(
@@ -83,7 +82,7 @@ class NewSectionWidget extends StatelessWidget {
                             children: [
                               // Imagen de la sección
                               Image.asset(
-                                newSectionImagePaths[index],
+                                discoDuroImagePaths[index],
                                 fit: BoxFit.cover,
                               ),
                               // Ícono de expansión con color dinámico
@@ -93,7 +92,7 @@ class NewSectionWidget extends StatelessWidget {
                                 child: ColorFiltered(
                                   colorFilter: ColorFilter.mode(
                                     _getIconColorForBackground(
-                                        newSectionImagePaths[index]),
+                                        discoDuroImagePaths[index]),
                                     BlendMode.srcIn,
                                   ),
                                   child: Icon(
@@ -116,7 +115,7 @@ class NewSectionWidget extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: screenHeight * 0.1),
-                  const PurchaseButton(buttonText: '¡Obtén ahora!'),
+                  const PurchaseButton(buttonText: '¡Pagalo en Casa!'),
                 ],
               ),
             ),
@@ -130,7 +129,6 @@ class NewSectionWidget extends StatelessWidget {
   Color _getIconColorForBackground(String imagePath) {
     // Aquí puedes usar un paquete para obtener el color dominante de la imagen
     // Pero por ahora, asumimos que si la imagen es clara, usamos un ícono oscuro y viceversa
-    // Implementa aquí la lógica para determinar el color del ícono
     return Colors
         .white; // Puedes ajustar esto según el análisis del color de la imagen
   }

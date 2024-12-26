@@ -13,8 +13,8 @@ class GarantiaDiscoDuro extends StatelessWidget {
       margin: EdgeInsets.only(
           top: screenHeight * 0.05), // Margen superior responsivo
       decoration: BoxDecoration(
-        color: Colors.greenAccent, // Color de fondo
-        borderRadius: BorderRadius.circular(8.0),
+        color: const Color.fromRGBO(255, 119, 119, 0.89),
+        borderRadius: BorderRadius.circular(4.0),
       ),
       child: Text(
         'Garantía de 1 año para discos duros y unidades de almacenamiento.',

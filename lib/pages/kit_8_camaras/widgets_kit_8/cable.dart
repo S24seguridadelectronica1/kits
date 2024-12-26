@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Videobaluns extends StatelessWidget {
-  const Videobaluns({super.key});
+class Cable extends StatelessWidget {
+  const Cable({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class Videobaluns extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image.asset(
-                    'assets/images/22.webp', // Reemplaza con tu ruta de imagen
+                    'assets/images/24.webp', // Reemplaza con tu ruta de imagen
                     width: screenWidth * 0.4, // Tamaño dinámico
                     height: screenWidth * 0.3, // Tamaño dinámico
                     fit: BoxFit.cover,
@@ -33,7 +33,7 @@ class Videobaluns extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Videobaluns',
+                        'Cable',
                         style: TextStyle(
                           fontSize: screenWidth * 0.05, // Tamaño dinámico
                           fontWeight: FontWeight.bold,
@@ -42,7 +42,7 @@ class Videobaluns extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       Text(
-                        'Los videobaluns permiten la transmisión de señales de video a través de cables UTP, '
+                        'El cable permite la transmisión de señales de video a través de cables UTP, '
                         'garantizando una señal clara y estable a larga distancia.',
                         style: TextStyle(
                           fontSize: screenWidth * 0.04, // Tamaño dinámico
@@ -63,7 +63,7 @@ class Videobaluns extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image.asset(
-                    'assets/images/22.webp', // Reemplaza con tu ruta de imagen
+                    'assets/images/24.webp', // Reemplaza con tu ruta de imagen
                     width: screenWidth * 0.8, // Tamaño dinámico
                     height: screenWidth * 0.5, // Tamaño dinámico
                     fit: BoxFit.cover,
@@ -75,7 +75,7 @@ class Videobaluns extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Videobaluns',
+                      'Cable',
                       style: TextStyle(
                         fontSize: screenWidth * 0.06, // Tamaño dinámico
                         fontWeight: FontWeight.bold,
@@ -85,7 +85,7 @@ class Videobaluns extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     Text(
-                      'Los videobaluns permiten la transmisión de señales de video a través de cables UTP, '
+                      'El cable permite la transmisión de señales de video a través de cables UTP, '
                       'garantizando una señal clara y estable a larga distancia.',
                       style: TextStyle(
                         fontSize: screenWidth * 0.045, // Tamaño dinámico

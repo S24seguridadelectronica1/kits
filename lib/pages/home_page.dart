@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/description_widget.dart';
-import '../widgets/new_section_widget.dart';
 import '../widgets/beneficios.dart';
-import '../widgets/garantia.dart';
 import '../widgets/camaras.dart';
 import '../widgets/garantia_disco_duro.dart';
 import '../widgets/discoduro.dart';
@@ -12,10 +10,12 @@ import '../widgets/video_baluns.dart';
 import '../widgets/bornera.dart';
 import '../widgets/cable.dart';
 import '../widgets/pague_en_casa.dart';
-import '../widgets/price.dart'; // Importa el archivo price.dart
-import '../widgets/formulario.dart'; // Importa el archivo formulario.dart
-import '../widgets/mensaje.dart'; // Importa el botón de WhatsApp
-import '../widgets/llamada.dart'; // Importa el botón de llamada
+import '../widgets/price.dart';
+import '../widgets/formulario.dart';
+import '../widgets/mensaje.dart';
+import '../widgets/llamada.dart';
+import '../widgets/dvr.dart';
+import '../widgets/garantia.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -23,21 +23,24 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final String imagePath =
-        'assets/images/1.webp'; // Declara la ruta de la imagen aquí
+    final String imagePath = 'assets/images/1.webp';
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primary,
+        backgroundColor:
+            const Color.fromRGBO(156, 145, 255, 1), // Color del fondo
         title: const Text(
-            'Servicio contra entrega en Bucaramanga y su área metropolitana'),
+          'Servicio contra entrega en Bucaramanga y su área metropolitana',
+          style: TextStyle(
+            color: Colors.white, // Cambia el color del texto aquí
+          ),
+        ),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(8.0), // Reducido a 8.0
         child: LayoutBuilder(
           builder: (context, constraints) {
             if (constraints.maxWidth > 800) {
-              // Diseño para pantallas grandes
               return Column(
                 children: [
                   Row(
@@ -50,7 +53,7 @@ class HomePage extends StatelessWidget {
                         height: screenWidth * 0.8,
                         fit: BoxFit.cover,
                       ),
-                      const SizedBox(width: 50),
+                      const SizedBox(width: 20), // Reducido el espacio
                       const Expanded(
                         child: DescriptionWidget(
                           fontSizeTitle: 42,
@@ -59,42 +62,51 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20), // Reducido el espacio
                   const Beneficios(),
-                  const SizedBox(height: 40),
-                  const NewSectionWidget(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20), // Reducido el espacio
+                  const DvrWidget(),
+                  const SizedBox(height: 20), // Reducido el espacio
                   const Garantia(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20), // Reducido el espacio
                   const CamarasWidget(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20), // Reducido el espacio
                   const GarantiaDiscoDuro(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20), // Reducido el espacio
                   const DiscoDuroWidget(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20), // Reducido el espacio
                   const AccesoriosDelKit(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20), // Reducido el espacio
                   const FuentesDeEnergia(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20), // Reducido el espacio
                   const Videobaluns(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20), // Reducido el espacio
                   const Borneras(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20), // Reducido el espacio
                   const Cable(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20), // Reducido el espacio
                   const PagueEnCasa(),
-                  const SizedBox(height: 40),
-                  const Price(), // Aquí se incluye el widget Price
-                  const SizedBox(height: 40),
-                  const FormularioWidget(), // Incluye el widget del formulario
-                  const SizedBox(height: 40),
-                  const MensajeButton(), // Agrega el botón de WhatsApp aquí
-                  const SizedBox(height: 40),
-                  const LlamadaButton(), // Agrega el botón de llamada aquí
+                  const SizedBox(height: 20), // Reducido el espacio
+                  const Price(),
+                  const SizedBox(height: 20), // Reducido el espacio
+                  const FormularioWidget(),
+                  const SizedBox(height: 20), // Reducido el espacio
+                  const MensajeButton(),
+                  const SizedBox(height: 20), // Reducido el espacio
+                  const LlamadaButton(),
+                  const SizedBox(height: 20), // Reducido el espacio
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(
+                        context,
+                        '/kit_8',
+                      );
+                    },
+                    child: const Text('Ir al Kit 8'),
+                  ),
                 ],
               );
             } else {
-              // Diseño para pantallas pequeñas
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -104,40 +116,50 @@ class HomePage extends StatelessWidget {
                     height: screenWidth * 0.8,
                     fit: BoxFit.cover,
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 10), // Reducido el espacio
                   const DescriptionWidget(fontSizeTitle: 32, fontSizeText: 16),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20), // Reducido el espacio
                   const Beneficios(),
-                  const SizedBox(height: 40),
-                  const NewSectionWidget(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20), // Reducido el espacio
+                  const DvrWidget(),
+                  const SizedBox(height: 20), // Reducido el espacio
                   const Garantia(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20), // Reducido el espacio
                   const CamarasWidget(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20), // Reducido el espacio
                   const GarantiaDiscoDuro(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20), // Reducido el espacio
                   const DiscoDuroWidget(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20), // Reducido el espacio
                   const AccesoriosDelKit(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20), // Reducido el espacio
                   const FuentesDeEnergia(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20), // Reducido el espacio
                   const Videobaluns(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20), // Reducido el espacio
                   const Borneras(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20), // Reducido el espacio
                   const Cable(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20), // Reducido el espacio
                   const PagueEnCasa(),
-                  const SizedBox(height: 40),
-                  const Price(), // Aquí también se incluye en pantallas pequeñas
-                  const SizedBox(height: 40),
-                  const FormularioWidget(), // Incluye el widget del formulario
-                  const SizedBox(height: 40),
-                  const MensajeButton(), // Agrega el botón de WhatsApp aquí
-                  const SizedBox(height: 40),
-                  const LlamadaButton(), // Agrega el botón de llamada aquí
+                  const SizedBox(height: 20), // Reducido el espacio
+                  const Price(),
+                  const SizedBox(height: 20), // Reducido el espacio
+                  const FormularioWidget(),
+                  const SizedBox(height: 20), // Reducido el espacio
+                  const MensajeButton(),
+                  const SizedBox(height: 20), // Reducido el espacio
+                  const LlamadaButton(),
+                  const SizedBox(height: 20), // Reducido el espacio
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(
+                        context,
+                        '/kit_8',
+                      );
+                    },
+                    child: const Text('Ir al Kit 8'),
+                  ),
                 ],
               );
             }

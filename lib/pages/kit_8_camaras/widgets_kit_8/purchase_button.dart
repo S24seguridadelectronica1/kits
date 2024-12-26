@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 var logger = Logger();
 
@@ -125,28 +124,29 @@ class PurchaseButtonState extends State<PurchaseButton> {
                                 SizedBox(
                                   width: buttonWidth,
                                   height: 36,
-                                  child:
-                                      _buildWhatsAppButton(), // Llamada corregida
+                                  child: _buildWhatsAppButton(buttonTextSize),
                                 ),
-                                ElevatedButton(
-                                  onPressed: _onConfirmPurchase,
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: const Color.fromRGBO(20,
-                                        114, 255, 1), // Cambio de color aquí
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal:
-                                            8), // Ajusta el padding si es necesario
-                                  ),
-                                  child: Text(
-                                    'Confirmar Compra!',
-                                    style: TextStyle(
-                                      fontSize: buttonTextSize +
-                                          3, // Incrementa el tamaño del texto
-                                      color: Color.fromRGBO(
-                                          255, 255, 255, 1), // Color rojo
+                                SizedBox(
+                                  width: buttonWidth,
+                                  height: 36,
+                                  child: ElevatedButton(
+                                    onPressed: _onConfirmPurchase,
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: const Color.fromRGBO(
+                                          147, 192, 228, 1),
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8),
+                                    ),
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: Text(
+                                        'Confirmar',
+                                        style:
+                                            TextStyle(fontSize: buttonTextSize),
+                                      ),
                                     ),
                                   ),
-                                )
+                                ),
                               ],
                             ),
                           ),
@@ -154,7 +154,6 @@ class PurchaseButtonState extends State<PurchaseButton> {
                       );
                     },
                   ),
-
                   const SizedBox(height: 16),
                   const Text(
                     purchaseInfoPart2,
@@ -240,7 +239,7 @@ class PurchaseButtonState extends State<PurchaseButton> {
     }
   }
 
-  Widget _buildWhatsAppButton() {
+  Widget _buildWhatsAppButton(double buttonTextSize) {
     return ElevatedButton(
       onPressed: _launchWhatsApp,
       style: ElevatedButton.styleFrom(
@@ -248,11 +247,9 @@ class PurchaseButtonState extends State<PurchaseButton> {
       ),
       child: FittedBox(
         fit: BoxFit.scaleDown,
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            FaIcon(FontAwesomeIcons.whatsapp, size: 30, color: Colors.green),
-          ],
+        child: Text(
+          'WhatsApp',
+          style: TextStyle(fontSize: buttonTextSize),
         ),
       ),
     );
@@ -264,7 +261,7 @@ class PurchaseButtonState extends State<PurchaseButton> {
       onPressed: _showPurchaseModal,
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.blue,
-        foregroundColor: const Color.from(alpha: 1, red: 1, green: 1, blue: 1),
+        foregroundColor: Colors.white,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
         minimumSize: const Size(double.infinity, 60),
       ),
@@ -293,30 +290,14 @@ class LlamadaButton extends StatelessWidget {
         }
       },
       style: ElevatedButton.styleFrom(
-        backgroundColor: const Color.fromRGBO(255, 255, 255, 1), // Fondo blanco
+        backgroundColor: Colors.green,
         padding: const EdgeInsets.symmetric(horizontal: 8),
       ),
       child: FittedBox(
         fit: BoxFit.scaleDown,
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              Icons.phone,
-              size: 30, // Tamaño del ícono
-              color: const Color.fromARGB(
-                  202, 255, 1, 1), // Cambiar el color del ícono aquí
-            ),
-            SizedBox(width: 8), // Espacio entre el ícono y el número
-            Text(
-              '+573046615865', // Número de teléfono
-              style: TextStyle(
-                fontSize: textSize,
-                fontWeight: FontWeight.bold,
-                color: const Color.fromARGB(202, 255, 1, 1), // Color del texto
-              ),
-            ),
-          ],
+        child: Text(
+          'Llamar',
+          style: TextStyle(fontSize: textSize),
         ),
       ),
     );

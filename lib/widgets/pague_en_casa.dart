@@ -6,18 +6,19 @@ class PagueEnCasa extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
 
     return Container(
+      width: screenWidth *
+          1.5, // Aumentar el ancho al 150% del ancho de la pantalla
       padding: EdgeInsets.all(screenWidth * 0.04), // Ajuste dinámico de padding
-      margin: EdgeInsets.only(
-          top: screenHeight * 0.05), // Margen superior responsivo
+      margin:
+          EdgeInsets.zero, // Eliminar cualquier margen para ajustarse al borde
       decoration: BoxDecoration(
-        color: Colors.greenAccent, // Color de fondo
-        borderRadius: BorderRadius.circular(8.0),
+        color: const Color.fromRGBO(0, 0, 0, 0.89),
+        borderRadius: BorderRadius.circular(4.0),
       ),
       child: Text(
-        '¡Pídelo ahora, Págalo en casa!',
+        'Paga en casa al recibir el producto.',
         style: TextStyle(
           fontSize: screenWidth *
               0.05, // Tamaño de fuente dinámico basado en el ancho

@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'purchase_button.dart'; // Importa el botón de compra
+import 'purchase_button.dart'; // Asegúrate de tener el botón de compra implementado.
 
-const String camarasTitle = 'Cámaras de Seguridad';
-const List<String> camarasImagePaths = [
-  'assets/images/8.webp',
-  'assets/images/9.webp',
-  'assets/images/10.webp',
-  'assets/images/11.webp',
-  'assets/images/12.webp',
-  'assets/images/13.webp',
-  'assets/images/14.webp',
-  'assets/images/15.webp',
+const String dvrTitle = 'DVR DS-7104HQHI-K1';
+const List<String> dvrImagePaths = [
+  'assets/images/2.webp',
+  'assets/images/3.webp',
+  'assets/images/4.webp',
+  'assets/images/5.webp',
+  'assets/images/6.webp',
+  'assets/images/7.webp',
 ];
-const String camarasDescription =
-    'Las cámaras de seguridad ofrecen una vigilancia constante para proteger tu hogar y tu negocio, con alta definición y visión nocturna.';
+const String dvrDescription =
+    'El DVR DS-7104HQHI-K1 es un dispositivo de grabación de video digital con soporte para cámaras HD, visión nocturna, y una gran capacidad de almacenamiento para proteger tu hogar o negocio con alta calidad.';
 
-class CamarasWidget extends StatelessWidget {
-  const CamarasWidget({super.key});
+class DvrWidget extends StatelessWidget {
+  const DvrWidget({super.key});
 
   void _showFullScreenImage(BuildContext context, int initialIndex) {
     Navigator.push(
@@ -25,8 +23,8 @@ class CamarasWidget extends StatelessWidget {
       MaterialPageRoute(
         builder: (context) => FullScreenImageCarousel(
           initialIndex: initialIndex,
-          imagePaths: camarasImagePaths,
-          description: camarasDescription,
+          imagePaths: dvrImagePaths,
+          description: dvrDescription,
         ),
       ),
     );
@@ -43,13 +41,13 @@ class CamarasWidget extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Texto descriptivo de las cámaras
+            // Texto descriptivo del DVR
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    camarasTitle,
+                    dvrTitle,
                     style: TextStyle(
                       fontSize: screenWidth * 0.08, // Ajustar tamaño del título
                       fontWeight: FontWeight.bold,
@@ -57,7 +55,7 @@ class CamarasWidget extends StatelessWidget {
                   ),
                   SizedBox(height: screenHeight * 0.02),
                   Text(
-                    camarasDescription,
+                    dvrDescription,
                     style: TextStyle(
                       fontSize: screenWidth *
                           0.04, // Ajustar tamaño de la descripción
@@ -73,7 +71,7 @@ class CamarasWidget extends StatelessWidget {
               child: Column(
                 children: [
                   CarouselSlider.builder(
-                    itemCount: camarasImagePaths.length,
+                    itemCount: dvrImagePaths.length,
                     itemBuilder:
                         (BuildContext context, int index, int realIndex) {
                       return GestureDetector(
@@ -85,7 +83,7 @@ class CamarasWidget extends StatelessWidget {
                             children: [
                               // Imagen de la sección
                               Image.asset(
-                                camarasImagePaths[index],
+                                dvrImagePaths[index],
                                 fit: BoxFit.cover,
                               ),
                               // Ícono de expansión con color dinámico
@@ -95,7 +93,7 @@ class CamarasWidget extends StatelessWidget {
                                 child: ColorFiltered(
                                   colorFilter: ColorFilter.mode(
                                     _getIconColorForBackground(
-                                        camarasImagePaths[index]),
+                                        dvrImagePaths[index]),
                                     BlendMode.srcIn,
                                   ),
                                   child: Icon(
