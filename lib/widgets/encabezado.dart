@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kit_de_camaras2/widgets/purchase_button.dart';
 
 class Encabezado extends StatelessWidget {
   final String imagePath;
@@ -32,30 +33,27 @@ class Encabezado extends StatelessWidget {
   }
 
   Widget _buildExtraLargeScreen() {
-    return Padding(
+    return SingleChildScrollView(
       padding: const EdgeInsets.all(24.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Título que ocupa todo el ancho
+          // Título
           Container(
-            width:
-                double.infinity, // Hace que el contenedor ocupe todo el ancho
-            padding: const EdgeInsets.symmetric(
-                vertical: 16.0), // Espaciado vertical
-            color: Colors.blue, // Opcional: color de fondo para el título
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            color: Colors.blue,
             child: Text(
               titulo,
-              textAlign: TextAlign.center, // Centrar el texto horizontalmente
+              textAlign: TextAlign.center,
               style: const TextStyle(
                 fontSize: 32.0,
                 fontWeight: FontWeight.bold,
-                color: Colors.white, // Opcional: color del texto
+                color: Colors.white,
               ),
             ),
           ),
-          const SizedBox(
-              height: 24.0), // Espacio entre el título y el contenido
+          const SizedBox(height: 24.0),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -88,13 +86,16 @@ class Encabezado extends StatelessWidget {
                     ),
                     const SizedBox(height: 12.0),
                     Text(
-                      'Precio: $precio', // Muestra el precio debajo de la descripción adicional
+                      'Precio: $precio',
                       style: const TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.bold,
-                        color: Colors.green, // Color para el precio
+                        color: Colors.green,
                       ),
                     ),
+                    const SizedBox(height: 20.0),
+                    // Botón de compra
+                    const PurchaseButton(buttonText: 'Pague en Casa!'),
                   ],
                 ),
               )
@@ -106,30 +107,27 @@ class Encabezado extends StatelessWidget {
   }
 
   Widget _buildLargeScreen() {
-    return Padding(
+    return SingleChildScrollView(
       padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Título que ocupa todo el ancho
           Container(
-            width:
-                double.infinity, // Hace que el contenedor ocupe todo el ancho
-            padding: const EdgeInsets.symmetric(
-                vertical: 16.0), // Espaciado vertical
-            color: Colors.blue, // Opcional: color de fondo para el título
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            color: Colors.blue,
             child: Text(
               titulo,
-              textAlign: TextAlign.center, // Centrar el texto horizontalmente
+              textAlign: TextAlign.center,
               style: const TextStyle(
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,
-                color: Colors.white, // Opcional: color del texto
+                color: Colors.white,
               ),
             ),
           ),
-          const SizedBox(
-              height: 24.0), // Espacio entre el título y el contenido
+          const SizedBox(height: 24.0),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -159,16 +157,21 @@ class Encabezado extends StatelessWidget {
                         fontStyle: FontStyle.italic,
                         color: Colors.grey,
                       ),
+                      maxLines: null, // Permitir líneas ilimitadas
+                      overflow: TextOverflow.visible, // Mostrar todo el texto
                     ),
                     const SizedBox(height: 12.0),
                     Text(
-                      'Precio: $precio', // Aquí se agregó el precio
+                      'Precio: $precio',
                       style: const TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.bold,
-                        color: Colors.green, // Color para el precio
+                        color: Colors.green,
                       ),
                     ),
+                    const SizedBox(height: 20.0),
+                    // Botón de compra
+                    const PurchaseButton(buttonText: 'Pague en Casa!'),
                   ],
                 ),
               ),
@@ -180,30 +183,27 @@ class Encabezado extends StatelessWidget {
   }
 
   Widget _buildMediumScreen() {
-    return Padding(
+    return SingleChildScrollView(
       padding: const EdgeInsets.all(12.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Título que ocupa todo el ancho
           Container(
-            width:
-                double.infinity, // Hace que el contenedor ocupe todo el ancho
-            padding: const EdgeInsets.symmetric(
-                vertical: 16.0), // Espaciado vertical
-            color: Colors.blue, // Opcional: color de fondo para el título
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            color: Colors.blue,
             child: Text(
               titulo,
-              textAlign: TextAlign.center, // Centrar el texto horizontalmente
+              textAlign: TextAlign.center,
               style: const TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
-                color: Colors.white, // Opcional: color del texto
+                color: Colors.white,
               ),
             ),
           ),
-          const SizedBox(
-              height: 16.0), // Espacio entre el título y el contenido
+          const SizedBox(height: 16.0),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -233,16 +233,21 @@ class Encabezado extends StatelessWidget {
                         fontStyle: FontStyle.italic,
                         color: Colors.grey,
                       ),
+                      maxLines: null, // Permitir líneas ilimitadas
+                      overflow: TextOverflow.visible, // Mostrar todo el texto
                     ),
                     const SizedBox(height: 12.0),
                     Text(
-                      'Precio: $precio', // Aquí se agregó el precio
+                      'Precio: $precio',
                       style: const TextStyle(
                         fontSize: 16.0,
                         fontWeight: FontWeight.bold,
-                        color: Colors.green, // Color para el precio
+                        color: Colors.green,
                       ),
                     ),
+                    const SizedBox(height: 20.0),
+                    // Botón de compra
+                    const PurchaseButton(buttonText: 'Pague en Casa!'),
                   ],
                 ),
               ),
@@ -254,64 +259,81 @@ class Encabezado extends StatelessWidget {
   }
 
   Widget _buildSmallScreen() {
-    return Padding(
+    return SingleChildScrollView(
       padding: const EdgeInsets.all(8.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Título que ocupa todo el ancho
-          Container(
-            width:
-                double.infinity, // Hace que el contenedor ocupe todo el ancho
-            padding: const EdgeInsets.symmetric(
-                vertical: 16.0), // Espaciado vertical
-            color: Colors.blue, // Opcional: color de fondo para el título
-            child: Text(
-              titulo,
-              textAlign: TextAlign.center, // Centrar el texto horizontalmente
-              style: const TextStyle(
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.white, // Opcional: color del texto
+      child: SizedBox(
+        width: double.infinity,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            // Título
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              color: Colors.blue,
+              child: Text(
+                titulo,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
             ),
-          ),
-          const SizedBox(
-              height: 16.0), // Espacio entre el título y el contenido
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8.0),
-            child: Image.asset(
-              imagePath,
-              width: 100,
-              height: 100,
-              fit: BoxFit.cover,
+            const SizedBox(height: 16.0),
+            // Imagen
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: Image.asset(
+                imagePath,
+                width: 100,
+                height: 100,
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
-          const SizedBox(height: 8.0),
-          Text(
-            descripcion,
-            textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 14.0),
-          ),
-          const SizedBox(height: 12.0),
-          Text(
-            textoAdicional,
-            style: const TextStyle(
-              fontSize: 16.0,
-              fontStyle: FontStyle.italic,
-              color: Colors.grey,
+            const SizedBox(height: 8.0),
+            // Descripción
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Text(
+                descripcion,
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 14.0),
+              ),
             ),
-          ),
-          const SizedBox(height: 12.0),
-          Text(
-            'Precio: $precio', // Aquí se agregó el precio
-            style: const TextStyle(
-              fontSize: 16.0,
-              fontWeight: FontWeight.bold,
-              color: Colors.green, // Color para el precio
+            const SizedBox(height: 12.0),
+            // Texto adicional
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Text(
+                textoAdicional,
+                style: const TextStyle(
+                  fontSize: 16.0,
+                  fontStyle: FontStyle.italic,
+                  color: Colors.grey,
+                ),
+                textAlign: TextAlign.justify,
+              ),
             ),
-          ),
-        ],
+            const SizedBox(height: 12.0),
+            // Precio
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Text(
+                'Precio: $precio',
+                style: const TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.green,
+                ),
+              ),
+            ),
+            const SizedBox(height: 20.0),
+            // Botón de compra
+            const PurchaseButton(buttonText: 'Pague en Casa!'),
+          ],
+        ),
       ),
     );
   }

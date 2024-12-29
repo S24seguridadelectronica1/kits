@@ -122,15 +122,12 @@ class HomePage extends StatelessWidget {
         Encabezado(
           titulo: 'solo para Bucaramanga y el área metropolitana',
           imagePath: 'assets/images/1.webp',
-          descripcion: 'kit de 4 cámaras de seguridad de alta definición',
-          textoAdicional: 'ideal para todo tipo de negocio, casa o oficina',
+          descripcion:
+              'kit de 4 cámaras Full HD 1080p (2mpx) + grabacion de 4 mpx lite',
+          textoAdicional:
+              'Cámaras de alta definición, ideales para todo tipo de negocio, casa u oficina, tanto para interiores como para exteriores',
           precio:
               '\$199.99', // Asegúrate de que todos los parámetros están separados por comas
-        ),
-        const SizedBox(height: 10),
-        const Text(
-          'Descripción sobre el producto o servicio',
-          style: TextStyle(fontSize: 16),
         ),
         const SizedBox(height: 20),
         const Beneficios(),
