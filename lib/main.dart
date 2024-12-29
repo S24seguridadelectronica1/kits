@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:logger/logger.dart';
-import 'pages/home_page.dart';
-import 'pages/kit_8_camaras/pages_kit_8/kit_82ce56d0t.dart'; // Importa la página del kit 8
+import 'pages/home_page.dart'; // Importar HomePage
+import 'pages/kit_8_camaras/pages_kit_8/kit_82ce56d0t.dart'; // Importar Kit8Page con la nueva ruta
 
 // Instancia de logger
 var logger = Logger();

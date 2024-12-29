@@ -12,14 +12,14 @@ const String purchaseInfoPart1 =
     'La entrega es inmediata una vez confirme su compra, siempre y cuando haya existencias disponibles. '
     'El pedido se entrega en un máximo de 2 horas, únicamente para Bucaramanga y su área metropolitana. '
     'Realizamos una llamada de confirmación para verificar la dirección y la disponibilidad de equipos. '
-    'Recibimos pagos en efectivo, Nequi o Bancolombia.';
+    'Por favor, confirme su compra para garantizar la entrega inmediata.';
 
 const String purchaseInfoPart2 =
     'Los pedidos se entregan en los siguientes horarios:\n\n'
     'De lunes a viernes: de 8:00 a.m. a 6:00 p.m. (jornada continua).\n'
     'Sábados: de 8:00 a.m. a 1:00 p.m.\n'
     'Domingos y festivos no hacemos entregas.\n\n'
-    'Por favor, confirme su compra para garantizar la entrega inmediata.';
+    'Recibimos pagos en efectivo, Nequi o Bancolombia.';
 
 class PurchaseButton extends StatefulWidget {
   final String buttonText;
@@ -88,65 +88,57 @@ class PurchaseButtonState extends State<PurchaseButton> {
                   const SizedBox(height: 10),
                   _buildTextField('Dirección', _addressController),
                   const SizedBox(height: 10),
-                  _buildTextField('Barrio', _neighborhoodController),
+                  _buildTextField('Ciudad y Barrio', _neighborhoodController),
                   const SizedBox(height: 10),
-                  _buildTextField('Ciudad', _cityController),
                   const SizedBox(height: 16),
                   // Reemplaza la sección del LayoutBuilder con este código:
                   LayoutBuilder(
                     builder: (context, constraints) {
                       double screenWidth = MediaQuery.of(context).size.width;
-
-                      // Adjust button sizes based on screen width
                       double buttonWidth = screenWidth > 600 ? 120 : 100;
                       double buttonTextSize = screenWidth > 600 ? 14 : 12;
 
                       return Column(
                         children: [
                           Align(
-                            // Cambiar alineación basada en el ancho de la pantalla
                             alignment: screenWidth > 600
                                 ? Alignment.centerRight
                                 : Alignment.center,
                             child: Wrap(
-                              spacing: 8, // Horizontal space between buttons
-                              runSpacing: 8, // Vertical space between rows
-                              // Cambiar alineación del Wrap basada en el ancho de la pantalla
+                              spacing: 8,
+                              runSpacing: 8,
                               alignment: screenWidth > 600
                                   ? WrapAlignment.end
                                   : WrapAlignment.center,
                               children: [
+                                ElevatedButton(
+                                  onPressed: _onConfirmPurchase,
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor:
+                                        const Color.fromRGBO(20, 114, 255, 1),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 8),
+                                  ),
+                                  child: Text(
+                                    'Confirmar Compra!',
+                                    style: TextStyle(
+                                      fontSize: buttonTextSize + 3,
+                                      color: const Color.fromRGBO(
+                                          255, 255, 255, 1),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: buttonWidth,
+                                  height: 36,
+                                  child: _buildWhatsAppButton(),
+                                ),
                                 SizedBox(
                                   width: buttonWidth,
                                   height: 36,
                                   child:
                                       LlamadaButton(textSize: buttonTextSize),
                                 ),
-                                SizedBox(
-                                  width: buttonWidth,
-                                  height: 36,
-                                  child:
-                                      _buildWhatsAppButton(), // Llamada corregida
-                                ),
-                                ElevatedButton(
-                                  onPressed: _onConfirmPurchase,
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: const Color.fromRGBO(20,
-                                        114, 255, 1), // Cambio de color aquí
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal:
-                                            8), // Ajusta el padding si es necesario
-                                  ),
-                                  child: Text(
-                                    'Confirmar Compra!',
-                                    style: TextStyle(
-                                      fontSize: buttonTextSize +
-                                          3, // Incrementa el tamaño del texto
-                                      color: Color.fromRGBO(
-                                          255, 255, 255, 1), // Color rojo
-                                    ),
-                                  ),
-                                )
                               ],
                             ),
                           ),
@@ -198,8 +190,7 @@ class PurchaseButtonState extends State<PurchaseButton> {
       'nombre': _nameController.text,
       'telefono': _phoneController.text,
       'direccion': _addressController.text,
-      'barrio': _neighborhoodController.text,
-      'ciudad': _cityController.text,
+      'ciudad_y_barrio': _neighborhoodController.text,
     }).execute();
 
     if (response.error == null) {
