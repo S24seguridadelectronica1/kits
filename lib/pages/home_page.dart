@@ -27,7 +27,8 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(255, 5, 47, 1), // Color del fondo
+        backgroundColor:
+            const Color.fromRGBO(33, 55, 255, 0.588), // Color del fondo
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
@@ -63,9 +64,9 @@ class HomePage extends StatelessWidget {
           titulo: 'solo para Bucaramanga y el área metropolitana',
           imagePath: 'assets/images/1.webp',
           descripcion:
-              'kit de 4 cámaras Full HD 1080p (2mpx) + grabacion de 4 mpx lite',
+              'kit de 4 cámaras Full HD 1080p (2mpx) de HIKVISION con grabacion a 4 mpx lite',
           textoAdicional:
-              'Cámaras de alta definición, ideales para todo tipo de negocio, casa u oficina, tanto para interiores como para exteriores',
+              'Cámaras de alta definición, ideales para todo tipo de negocio, casa u oficina.',
           precio:
               '\$199.99', // Asegúrate de que todos los parámetros están separados por comas
         ),

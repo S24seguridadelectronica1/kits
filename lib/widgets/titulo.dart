@@ -22,7 +22,7 @@ class TituloWidget extends StatelessWidget {
       padding: EdgeInsets.all(containerPadding), // Padding ajustado
       child: Container(
         width: double.infinity, // Ocupa el ancho máximo posible
-        color: const Color.fromRGBO(255, 85, 85, 1), // Fondo negro
+        color: Colors.transparent, // Fondo transparente
         child: FittedBox(
           // Ajuste responsivo
           fit: BoxFit.scaleDown, // Escalar hacia abajo si es necesario

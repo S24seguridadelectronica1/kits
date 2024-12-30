@@ -61,8 +61,8 @@ class Encabezado extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12.0),
                 child: Image.asset(
                   imagePath,
-                  width: 200,
-                  height: 200,
+                  width: 400,
+                  height: 400,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -260,7 +260,7 @@ class Encabezado extends StatelessWidget {
 
   Widget _buildSmallScreen() {
     return SingleChildScrollView(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(0.0),
       child: SizedBox(
         width: double.infinity,
         child: Column(
@@ -269,13 +269,13 @@ class Encabezado extends StatelessWidget {
             // Título
             Container(
               width: double.infinity,
-              padding: const EdgeInsets.symmetric(vertical: 16.0),
-              color: Colors.blue,
+              padding: const EdgeInsets.symmetric(vertical: 0.0),
+              color: const Color.fromARGB(255, 8, 6, 6),
               child: Text(
                 titulo,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                  fontSize: 18.0,
+                  fontSize: 25.0,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
@@ -287,8 +287,8 @@ class Encabezado extends StatelessWidget {
               borderRadius: BorderRadius.circular(8.0),
               child: Image.asset(
                 imagePath,
-                width: 100,
-                height: 100,
+                width: 300,
+                height: 300,
                 fit: BoxFit.cover,
               ),
             ),
