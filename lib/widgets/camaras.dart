@@ -16,13 +16,7 @@ const List<String> camarasImagePaths = [
   'assets/images/DS-2CE56D0T-IRPF(C).webp',
 ];
 const String camarasDescription =
-    '4 Cámaras Domo TURBOHD 1080p de HIKVISION con lente de 2.8 mm y visión nocturna inteligente EXIR de hasta 20 mts.\n\n'
-    '• Resolución: 2 Megapíxeles (1920 x 1080)\n'
-    '• Lente fijo: 2.8 mm (ángulo de visión 106°)\n'
-    '• Tecnología: Soporta TVI / AHD / CVI / CVBS\n'
-    '• Características: dWDR, AGC, BLC, HLC, 2D DNR\n'
-    '• Alimentación: 12 VCD / 2.2 Watts\n'
-    '• Material: Plástico / Dimensiones: 89.9 x 70.1 mm / Peso: 130 g\n';
+    '4 Cámaras Domo TURBOHD 1080p de HIKVISION con lente de 2.8 mm y visión nocturna inteligente EXIR de hasta 20 mts.\n\n';
 
 class CamarasWidget extends StatelessWidget {
   const CamarasWidget({super.key});

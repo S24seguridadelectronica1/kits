@@ -15,8 +15,8 @@ const List<String> dvrImagePaths = [
 ];
 const String dvrDescription =
     'DVR AcuSense mini 1U H.265 de 4 canales 1080P con detección de movimiento avanzada (humanos y vehículos) '
-    'y protección perimetral. Incluye compresión H.265 Pro+ para mayor eficiencia, soporte para cámaras IP de hasta 6 MP, '
-    'y grabación en múltiples resoluciones hasta 3K Lite. Con salida HDMI/VGA, almacenamiento de hasta 10 TB, y acceso remoto hasta 32 usuarios.';
+    'y protección perimetral. Incluye compresión H.265 Pro+, soporte para cámaras IP de hasta 6 MP, '
+    'y grabación en múltiples resoluciones hasta 4mpx Lite.';
 
 class DvrWidget extends StatelessWidget {
   const DvrWidget({super.key});
