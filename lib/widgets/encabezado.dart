@@ -295,17 +295,17 @@ class Encabezado extends StatelessWidget {
             const SizedBox(height: 8.0),
             // Descripción
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              padding: const EdgeInsets.symmetric(horizontal: 1.0),
               child: Text(
                 descripcion,
                 textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 14.0),
+                style: const TextStyle(fontSize: 18.0),
               ),
             ),
             const SizedBox(height: 12.0),
             // Texto adicional
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              padding: const EdgeInsets.symmetric(horizontal: 1.0),
               child: Text(
                 textoAdicional,
                 style: const TextStyle(

@@ -8,14 +8,14 @@ var logger = Logger();
 
 const String purchaseInfoPart1 =
     'Por favor, complete los datos del formulario para que podamos hacer llegar el pedido a su domicilio. '
-    'El pago es contra entrega ("páguelo cuando lo tenga en sus manos") por un valor total de \$600,000, sin costo de domicilio. '
-    'La entrega es inmediata una vez confirme su compra, siempre y cuando haya existencias disponibles. '
-    'El pedido se entrega en un máximo de 2 horas, únicamente para Bucaramanga y su área metropolitana. '
-    'Realizamos una llamada de confirmación para verificar la dirección y la disponibilidad de equipos. '
+    'El pago es contra entrega únicamente para Bucaramanga y su área metropolitana, por un valor total de \$600,000, ¡domicilio gratis! '
+    'La entrega es inmediata, siempre y cuando haya existencias disponibles. '
+    'pedidos en un máximo de 3 horas en la puerta de su casa. '
+    'Realizamos una llamada de confirmación para verificar la dirección y la disponibilidad de los equipos. '
     'Por favor, confirme su compra para garantizar la entrega inmediata.';
 
 const String purchaseInfoPart2 =
-    'Los pedidos se entregan en los siguientes horarios:\n\n'
+    'Entrega de equipos en los siguientes horarios:\n\n'
     'De lunes a viernes: de 8:00 a.m. a 6:00 p.m. (jornada continua).\n'
     'Sábados: de 8:00 a.m. a 1:00 p.m.\n'
     'Domingos y festivos no hacemos entregas.\n\n'

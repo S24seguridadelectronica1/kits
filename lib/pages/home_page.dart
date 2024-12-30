@@ -63,10 +63,9 @@ class HomePage extends StatelessWidget {
         Encabezado(
           titulo: 'solo para Bucaramanga y el área metropolitana',
           imagePath: 'assets/images/1.webp',
-          descripcion:
-              'kit de 4 cámaras Full HD 1080p (2mpx) de HIKVISION con grabacion a 4 mpx lite',
+          descripcion: 'tecnologia acusense deteccion humanos y vehiculos!',
           textoAdicional:
-              'Cámaras de alta definición, ideales para todo tipo de negocio, casa u oficina.',
+              'kit de 4 cámaras Full HD 1080p (2mpx) de HIKVISION con grabacion a 4 mpx lite, ideales para todo tipo de negocio, casa u oficina.',
           precio:
               '\$199.99', // Asegúrate de que todos los parámetros están separados por comas
         ),
@@ -123,10 +122,9 @@ class HomePage extends StatelessWidget {
         Encabezado(
           titulo: 'solo para Bucaramanga y el área metropolitana',
           imagePath: 'assets/images/1.webp',
-          descripcion:
-              'kit de 4 cámaras Full HD 1080p (2mpx) + grabacion de 4 mpx lite',
+          descripcion: 'tecnologia acusense deteccion humanos y vehiculos!',
           textoAdicional:
-              'Cámaras de alta definición, ideales para todo tipo de negocio, casa u oficina, tanto para interiores como para exteriores',
+              'kit de 4 cámaras Full HD 1080p (2mpx) de HIKVISION con grabacion a 4 mpx lite, ideales para todo tipo de negocio, casa u oficina.',
           precio:
               '\$199.99', // Asegúrate de que todos los parámetros están separados por comas
         ),
