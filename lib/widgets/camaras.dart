@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'purchase_button.dart'; // Importa el botón de compra
 
-const String camarasTitle = 'Cámaras de Seguridad';
+const String camarasTitle = 'DS-2CE56D0T-IRPF(C)';
 const List<String> camarasImagePaths = [
-  'assets/images/8.webp',
   'assets/images/9.webp',
   'assets/images/10.webp',
   'assets/images/11.webp',
@@ -12,9 +11,18 @@ const List<String> camarasImagePaths = [
   'assets/images/13.webp',
   'assets/images/14.webp',
   'assets/images/15.webp',
+  'assets/images/16.webp',
+  'assets/images/17.webp',
+  'assets/images/DS-2CE56D0T-IRPF(C).webp',
 ];
 const String camarasDescription =
-    'Las cámaras de seguridad ofrecen una vigilancia constante para proteger tu hogar y tu negocio, con alta definición y visión nocturna.';
+    '4 Cámaras Domo TURBOHD 1080p de HIKVISION con lente de 2.8 mm y visión nocturna inteligente EXIR de hasta 20 mts.\n\n'
+    '• Resolución: 2 Megapíxeles (1920 x 1080)\n'
+    '• Lente fijo: 2.8 mm (ángulo de visión 106°)\n'
+    '• Tecnología: Soporta TVI / AHD / CVI / CVBS\n'
+    '• Características: dWDR, AGC, BLC, HLC, 2D DNR\n'
+    '• Alimentación: 12 VCD / 2.2 Watts\n'
+    '• Material: Plástico / Dimensiones: 89.9 x 70.1 mm / Peso: 130 g\n';
 
 class CamarasWidget extends StatelessWidget {
   const CamarasWidget({super.key});
@@ -51,11 +59,11 @@ class CamarasWidget extends StatelessWidget {
                   Text(
                     camarasTitle,
                     style: TextStyle(
-                      fontSize: screenWidth * 0.08, // Ajustar tamaño del título
+                      fontSize: screenWidth * 0.04, // Ajustar tamaño del título
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: screenHeight * 0.02),
+                  SizedBox(height: screenHeight * 0.01),
                   Text(
                     camarasDescription,
                     style: TextStyle(

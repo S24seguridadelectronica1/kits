@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'purchase_button.dart'; // Asegúrate de tener el botón de compra implementado.
 
-const String dvrTitle = 'DVR DS-7104HQHI-K1';
+const String dvrTitle = 'DVR iDS-7104HQHI-M1/S 4 Mpx Lite';
 const List<String> dvrImagePaths = [
   'assets/images/2.webp',
+  'assets/images/IDS7104HQHIM1S(2).webp',
   'assets/images/3.webp',
   'assets/images/4.webp',
   'assets/images/5.webp',
   'assets/images/6.webp',
   'assets/images/7.webp',
+  'assets/images/8.webp',
 ];
 const String dvrDescription =
     'DVR AcuSense mini 1U H.265 de 4 canales 1080P con detección de movimiento avanzada (humanos y vehículos) '
@@ -37,6 +39,18 @@ class DvrWidget extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 
+    // Ajuste de tamaño de fuente para pantallas pequeñas, medianas y grandes
+    double titleFontSize = screenWidth * 0.03;
+    double descriptionFontSize = screenWidth * 0.04;
+
+    if (screenWidth < 600) {
+      titleFontSize = screenWidth * 0.06; // Pantallas pequeñas
+      descriptionFontSize = screenWidth * 0.03;
+    } else if (screenWidth < 1200) {
+      titleFontSize = screenWidth * 0.04; // Pantallas medianas
+      descriptionFontSize = screenWidth * 0.05;
+    }
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -51,7 +65,7 @@ class DvrWidget extends StatelessWidget {
                   Text(
                     dvrTitle,
                     style: TextStyle(
-                      fontSize: screenWidth * 0.08, // Ajustar tamaño del título
+                      fontSize: titleFontSize,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -59,15 +73,13 @@ class DvrWidget extends StatelessWidget {
                   Text(
                     dvrDescription,
                     style: TextStyle(
-                      fontSize: screenWidth *
-                          0.04, // Ajustar tamaño de la descripción
+                      fontSize: descriptionFontSize,
                     ),
                   ),
                 ],
               ),
             ),
             SizedBox(width: screenWidth * 0.02),
-
             // Carrusel de imágenes con botón de compra
             Expanded(
               child: Column(
@@ -100,8 +112,7 @@ class DvrWidget extends StatelessWidget {
                                   ),
                                   child: Icon(
                                     Icons.zoom_in,
-                                    size: screenWidth *
-                                        0.1, // Ajustar tamaño del ícono
+                                    size: screenWidth * 0.1,
                                   ),
                                 ),
                               ),
@@ -130,11 +141,7 @@ class DvrWidget extends StatelessWidget {
 
   // Método para decidir el color del ícono dependiendo del fondo de la imagen
   Color _getIconColorForBackground(String imagePath) {
-    // Aquí puedes usar un paquete para obtener el color dominante de la imagen
-    // Pero por ahora, asumimos que si la imagen es clara, usamos un ícono oscuro y viceversa
-    // Implementa aquí la lógica para determinar el color del ícono
-    return Colors
-        .white; // Puedes ajustar esto según el análisis del color de la imagen
+    return Colors.white; // Color predeterminado para el ícono
   }
 }
 

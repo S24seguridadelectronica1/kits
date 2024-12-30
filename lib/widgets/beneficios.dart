@@ -91,20 +91,7 @@ class Beneficios extends StatelessWidget {
                 'Operación estable en temperaturas de -40°C a 60°C y construcción resistente a la humedad.',
               ),
             ),
-            ListTile(
-              leading: Icon(Icons.check_circle, color: Colors.green),
-              title: Text('Fácil instalación'),
-              subtitle: Text(
-                'Diseño compacto y ligero, ideal para espacios reducidos.',
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.check_circle, color: Colors.green),
-              title: Text('Compatibilidad universal'),
-              subtitle: Text(
-                'Compatible con estándares NTSC y PAL para versatilidad en diferentes regiones.',
-              ),
-            ),
+
             ListTile(
               leading: Icon(Icons.check_circle, color: Colors.green),
               title: Text('Funciones inteligentes'),

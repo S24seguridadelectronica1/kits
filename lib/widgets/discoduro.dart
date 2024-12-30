@@ -4,11 +4,11 @@ import 'purchase_button.dart'; // Importa el botón de compra
 
 const String discoDuroTitle = 'Discos Duros';
 const List<String> discoDuroImagePaths = [
-  'assets/images/16.webp',
-  'assets/images/17.webp',
   'assets/images/18.webp',
   'assets/images/19.webp',
   'assets/images/20.webp',
+  'assets/images/21.webp',
+  'assets/images/22.webp',
 ];
 const String discoDuroDescription =
     'Los discos duros ofrecen un almacenamiento fiable y rápido para tus datos más importantes, con opciones de alta capacidad y rendimiento.';
