@@ -95,7 +95,7 @@ class Encabezado extends StatelessWidget {
                     ),
                     const SizedBox(height: 20.0),
                     // Botón de compra
-                    const PurchaseButton(buttonText: 'Pague en Casa!'),
+                    const PurchaseButton(buttonText: 'Comprar!'),
                   ],
                 ),
               )
@@ -171,7 +171,7 @@ class Encabezado extends StatelessWidget {
                     ),
                     const SizedBox(height: 20.0),
                     // Botón de compra
-                    const PurchaseButton(buttonText: 'Pague en Casa!'),
+                    const PurchaseButton(buttonText: 'Comprar!'),
                   ],
                 ),
               ),
@@ -247,7 +247,7 @@ class Encabezado extends StatelessWidget {
                     ),
                     const SizedBox(height: 20.0),
                     // Botón de compra
-                    const PurchaseButton(buttonText: 'Pague en Casa!'),
+                    const PurchaseButton(buttonText: 'Comprar!'),
                   ],
                 ),
               ),
@@ -331,7 +331,7 @@ class Encabezado extends StatelessWidget {
             ),
             const SizedBox(height: 20.0),
             // Botón de compra
-            const PurchaseButton(buttonText: 'Pague en Casa!'),
+            const PurchaseButton(buttonText: 'Comprar!'),
           ],
         ),
       ),

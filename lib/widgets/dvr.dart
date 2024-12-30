@@ -12,7 +12,9 @@ const List<String> dvrImagePaths = [
   'assets/images/7.webp',
 ];
 const String dvrDescription =
-    'El DVR DS-7104HQHI-K1 es un dispositivo de grabación de video digital con soporte para cámaras HD, visión nocturna, y una gran capacidad de almacenamiento para proteger tu hogar o negocio con alta calidad.';
+    'DVR AcuSense mini 1U H.265 de 4 canales 1080P con detección de movimiento avanzada (humanos y vehículos) '
+    'y protección perimetral. Incluye compresión H.265 Pro+ para mayor eficiencia, soporte para cámaras IP de hasta 6 MP, '
+    'y grabación en múltiples resoluciones hasta 3K Lite. Con salida HDMI/VGA, almacenamiento de hasta 10 TB, y acceso remoto hasta 32 usuarios.';
 
 class DvrWidget extends StatelessWidget {
   const DvrWidget({super.key});
@@ -116,7 +118,7 @@ class DvrWidget extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: screenHeight * 0.1),
-                  const PurchaseButton(buttonText: '¡Págalo en Casa!'),
+                  const PurchaseButton(buttonText: '¡envio sin costo!'),
                 ],
               ),
             ),

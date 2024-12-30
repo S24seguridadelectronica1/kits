@@ -12,7 +12,7 @@ class Beneficios extends StatelessWidget {
       children: [
         // Título de la sección
         Text(
-          'Beneficios del DVR AcuSense mini 1U H.265 y las Cámaras de Seguridad',
+          'Beneficios del Kit',
           style: TextStyle(
             fontSize: screenWidth *
                 0.06, // Ajusta el tamaño del texto según el ancho de la pantalla
