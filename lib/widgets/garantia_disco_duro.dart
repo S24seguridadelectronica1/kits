@@ -17,7 +17,7 @@ class GarantiaDiscoDuro extends StatelessWidget {
         borderRadius: BorderRadius.circular(4.0),
       ),
       child: Text(
-        'Garantía de 1 año para discos duros y unidades de almacenamiento.',
+        'Garantía Limitada de 3 años para disco duro.',
         style: TextStyle(
           fontSize: screenWidth *
               0.05, // Tamaño de fuente dinámico basado en el ancho

@@ -33,7 +33,7 @@ class Borneras extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Borneras',
+                        '4 pares de Borneras',
                         style: TextStyle(
                           fontSize: screenWidth * 0.05, // Tamaño dinámico
                           fontWeight: FontWeight.bold,
@@ -42,8 +42,7 @@ class Borneras extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       Text(
-                        'Las borneras se utilizan para la conexión y distribución de cables eléctricos, '
-                        'garantizando una conexión segura y ordenada.',
+                        '4 pares de borneras electricas para la conexión y distribución de energia de las camaras.',
                         style: TextStyle(
                           fontSize: screenWidth * 0.04, // Tamaño dinámico
                           color: Colors.grey[700],
@@ -75,7 +74,7 @@ class Borneras extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Borneras',
+                      '4 pares de Borneras',
                       style: TextStyle(
                         fontSize: screenWidth * 0.06, // Tamaño dinámico
                         fontWeight: FontWeight.bold,
@@ -85,8 +84,7 @@ class Borneras extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     Text(
-                      'Las borneras se utilizan para la conexión y distribución de cables eléctricos, '
-                      'garantizando una conexión segura y ordenada.',
+                      '4 pares de borneras electricas para la conexión y distribución de energia de las camaras.',
                       style: TextStyle(
                         fontSize: screenWidth * 0.045, // Tamaño dinámico
                         color: Colors.grey[700],

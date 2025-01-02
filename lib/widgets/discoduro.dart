@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'purchase_button.dart'; // Importa el botón de compra
 
-const String discoDuroTitle = 'Discos Duros';
+const String discoDuroTitle =
+    'Disco duro para videovigilancia WD Purple - 1 TB';
 const List<String> discoDuroImagePaths = [
   'assets/images/18.webp',
   'assets/images/19.webp',
@@ -11,7 +12,7 @@ const List<String> discoDuroImagePaths = [
   'assets/images/22.webp',
 ];
 const String discoDuroDescription =
-    'Los discos duros ofrecen un almacenamiento fiable y rápido para tus datos más importantes, con opciones de alta capacidad y rendimiento.';
+    'Disco duro WD Purple 1 TB para videovigilancia, grabación 24/7, tecnología AllFrame, velocidad 110 MB/s, interfaz SATA, caché 64 MB, soporta 64 cámaras.';
 
 class DiscoDuroWidget extends StatelessWidget {
   const DiscoDuroWidget({super.key});

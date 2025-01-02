@@ -33,7 +33,7 @@ class FuentesDeEnergia extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Accesorios del Kit',
+                        '4 Fuentes De Energia 12v - 1amp',
                         style: TextStyle(
                           fontSize: screenWidth * 0.05, // Tamaño dinámico
                           fontWeight: FontWeight.bold,
@@ -42,8 +42,7 @@ class FuentesDeEnergia extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       Text(
-                        'Los accesorios del kit incluyen cables, conectores, soportes y más, '
-                        'diseñados para garantizar una instalación completa y funcional.',
+                        'fuente de alimentación de AC 110- 240v, 12 voltios a 1 amperio de alta calidad, conector de alimentación de 2.1mm, con led indicador de funcionamiento, el articulo puede ser ligeramente distinto al de la foto.',
                         style: TextStyle(
                           fontSize: screenWidth * 0.04, // Tamaño dinámico
                           color: Colors.grey[700],
@@ -75,7 +74,7 @@ class FuentesDeEnergia extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Accesorios del Kit',
+                      '4 Fuentes De Energia 12v - 1amp',
                       style: TextStyle(
                         fontSize: screenWidth * 0.06, // Tamaño dinámico
                         fontWeight: FontWeight.bold,
@@ -85,8 +84,7 @@ class FuentesDeEnergia extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     Text(
-                      'Los accesorios del kit incluyen cables, conectores, soportes y más, '
-                      'diseñados para garantizar una instalación completa y funcional.',
+                      'fuente de alimentación de AC 110- 240v, 12 voltios a 1 amperio de alta calidad, conector de alimentación de 2.1mm, con led indicador de funcionamiento, el articulo puede ser ligeramente distinto al de la foto.',
                       style: TextStyle(
                         fontSize: screenWidth * 0.045, // Tamaño dinámico
                         color: Colors.grey[700],

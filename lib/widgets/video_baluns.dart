@@ -33,7 +33,7 @@ class Videobaluns extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Videobaluns',
+                        '4 pares de Video baluns pasivos',
                         style: TextStyle(
                           fontSize: screenWidth * 0.05, // Tamaño dinámico
                           fontWeight: FontWeight.bold,
@@ -42,8 +42,8 @@ class Videobaluns extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       Text(
-                        'Los videobaluns permiten la transmisión de señales de video a través de cables UTP, '
-                        'garantizando una señal clara y estable a larga distancia.',
+                        'VIDEO BALUM TURBO 4 EN 1 transmisión de señales de video a través de cables UTP, '
+                        'señal clara y estable a larga distancia.',
                         style: TextStyle(
                           fontSize: screenWidth * 0.04, // Tamaño dinámico
                           color: Colors.grey[700],
@@ -75,7 +75,7 @@ class Videobaluns extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Videobaluns',
+                      '4 pares de Video baluns pasivos',
                       style: TextStyle(
                         fontSize: screenWidth * 0.06, // Tamaño dinámico
                         fontWeight: FontWeight.bold,
@@ -85,8 +85,8 @@ class Videobaluns extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     Text(
-                      'Los videobaluns permiten la transmisión de señales de video a través de cables UTP, '
-                      'garantizando una señal clara y estable a larga distancia.',
+                      'VIDEO BALUM TURBO 4 EN 1 transmisión de señales de video a través de cables UTP, '
+                      'señal clara y estable a larga distancia.',
                       style: TextStyle(
                         fontSize: screenWidth * 0.045, // Tamaño dinámico
                         color: Colors.grey[700],
