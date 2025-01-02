@@ -9,9 +9,10 @@ var logger = Logger();
 const String purchaseInfoPart1 =
     'Por favor, complete los datos del formulario para que podamos hacer llegar el pedido a su domicilio. '
     'El pago es contra entrega únicamente para Bucaramanga y su área metropolitana, por un valor total de \$600,000, ¡domicilio gratis! '
-    'La entrega es inmediata, siempre y cuando haya existencias disponibles. '
+    'La entrega es inmediata. '
     'pedidos en un máximo de 3 horas en la puerta de su casa. '
     'Realizamos una llamada de confirmación para verificar la dirección y la disponibilidad de los equipos. '
+    'si desea recoger los equipos personalmente contactenos al WhatsApp.'
     'Por favor, confirme su compra para garantizar la entrega inmediata.';
 
 const String purchaseInfoPart2 =
