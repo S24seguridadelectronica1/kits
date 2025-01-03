@@ -42,7 +42,7 @@ class Price extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       Text(
-                        'Este producto tiene un precio competitivo, con opciones de pago flexibles y garantía extendida.',
+                        'kit de camaras turbo hd 1080p de hikvision con grabacion de 4 mpx lite, inteligencia artifical incluida reconocimiento de humanos y veheiculos por un valor de  .',
                         style: TextStyle(
                           fontSize: screenWidth * 0.04, // Tamaño dinámico
                           color: Colors.grey[700],
