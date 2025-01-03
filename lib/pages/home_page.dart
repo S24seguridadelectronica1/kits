@@ -17,6 +17,7 @@ import '../widgets/dvr.dart';
 import '../widgets/garantia.dart';
 import '../widgets/titulo.dart';
 import '../widgets/encabezado.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
 class LoadingPlaceholder extends StatelessWidget {
   const LoadingPlaceholder({super.key});
@@ -35,138 +36,189 @@ class LoadingPlaceholder extends StatelessWidget {
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
+  // Constantes para optimización
+  static const Duration _shortDelay = Duration(milliseconds: 50);
+  static const int totalItems = 18;
+
+  // Identificar widgets pesados
+  static const Map<int, bool> _heavyWidgets = {
+    0: true, // Encabezado
+    14: true, // Formulario
+  };
+
+  // Cache de widgets
+  static final Map<int, Future<Widget>> _widgetCache = {};
+
   Future<Widget> _loadWidgetData(
       int index, BuildContext context, double screenWidth) async {
-    // Simulamos una carga asíncrona para widgets pesados
-    await Future.delayed(const Duration(milliseconds: 100));
+    // Retornar del cache si existe
+    if (_widgetCache.containsKey(index)) {
+      return _widgetCache[index]!;
+    }
 
+    // Aplicar delay solo a widgets pesados
+    if (_heavyWidgets[index] ?? false) {
+      await Future.delayed(_shortDelay);
+    }
+
+    Widget widget;
     switch (index) {
       case 0:
-        return FutureBuilder(
-            future: _loadEncabezado(),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return const LoadingPlaceholder();
-              }
-              return Encabezado(
-                titulo: 'solo para Bucaramanga y el área metropolitana',
-                imagePath: 'assets/images/1.webp',
-                descripcion:
-                    'tecnologia acusense deteccion humanos y vehiculos!',
-                textoAdicional:
-                    'kit de 4 cámaras Full HD 1080p (2mpx) de HIKVISION con grabacion a 4 mpx lite, ideales para todo tipo de negocio, casa u oficina.',
-                precio: '\$199.99',
-              );
-            });
-      case 14: // FormularioWidget (componente pesado)
-        return FutureBuilder(
-            future: _loadFormulario(),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return const LoadingPlaceholder();
-              }
-              return const FormularioWidget();
-            });
-      // Widgets más ligeros sin FutureBuilder
+        widget = Encabezado(
+          titulo: 'solo para Bucaramanga y el área metropolitana',
+          imagePath: 'assets/images/1.webp',
+          descripcion: 'tecnologia acusense deteccion humanos y vehiculos!',
+          textoAdicional:
+              'kit de 4 cámaras Full HD 1080p (2mpx) de HIKVISION con grabacion a 4 mpx lite, ideales para todo tipo de negocio, casa u oficina.',
+          precio: '\$199.99',
+        );
+        break;
       case 1:
-        return const Beneficios();
+        widget = const Beneficios();
+        break;
       case 2:
-        return const DvrWidget();
+        widget = const DvrWidget();
+        break;
       case 3:
-        return const Garantia();
+        widget = const Garantia();
+        break;
       case 4:
-        return const CamarasWidget();
+        widget = const CamarasWidget();
+        break;
       case 5:
-        return const GarantiaDiscoDuro();
+        widget = const GarantiaDiscoDuro();
+        break;
       case 6:
-        return const DiscoDuroWidget();
+        widget = const DiscoDuroWidget();
+        break;
       case 7:
-        return const AccesoriosDelKit();
+        widget = const AccesoriosDelKit();
+        break;
       case 8:
-        return const FuentesDeEnergia();
+        widget = const FuentesDeEnergia();
+        break;
       case 9:
-        return const Videobaluns();
+        widget = const Videobaluns();
+        break;
       case 10:
-        return const Borneras();
+        widget = const Borneras();
+        break;
       case 11:
-        return const Cable();
+        widget = const Cable();
+        break;
       case 12:
-        return const PagueEnCasa();
+        widget = const PagueEnCasa();
+        break;
       case 13:
-        return const Price();
+        widget = const Price();
+        break;
+      case 14:
+        widget = const FormularioWidget();
+        break;
       case 15:
-        return const MensajeButton();
+        widget = const MensajeButton();
+        break;
       case 16:
-        return const LlamadaButton();
+        widget = const LlamadaButton();
+        break;
       case 17:
-        return ElevatedButton(
+        widget = ElevatedButton(
           onPressed: () {
             Navigator.pushNamed(context, '/kit_8');
           },
           child: const Text('Ir al Kit 8'),
         );
+        break;
       default:
-        return const SizedBox.shrink();
+        widget = const SizedBox.shrink();
     }
-  }
 
-  // Métodos auxiliares para simular carga de componentes pesados
-  Future<void> _loadEncabezado() async {
-    await Future.delayed(const Duration(milliseconds: 300));
-  }
-
-  Future<void> _loadFormulario() async {
-    await Future.delayed(const Duration(milliseconds: 200));
+    final future = Future.value(widget);
+    _widgetCache[index] = future;
+    return future;
   }
 
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    const int totalItems = 18;
 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(33, 55, 255, 0.588),
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            TituloWidget(
-              tituloText: 'Servicio contra entrega + envio gratis!',
-            ),
-          ],
+        title: const TituloWidget(
+          tituloText: 'Servicio contra entrega + envio gratis!',
         ),
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
-          return ListView.separated(
+          return ListView.builder(
+            // Cambiado a ListView.builder
             itemCount: totalItems,
-            // Reducido el cacheExtent para mejor rendimiento
-            cacheExtent: 300,
-            separatorBuilder: (context, index) => const SizedBox(height: 20),
+            cacheExtent: 1000.0, // Aumentado para mejor scrolling
             itemBuilder: (context, index) {
-              return LayoutBuilder(
-                builder: (context, constraints) {
-                  return Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: constraints.maxWidth > 800 ? 20 : 10,
-                    ),
-                    child: FutureBuilder<Widget>(
-                      future: _loadWidgetData(index, context, screenWidth),
-                      builder: (context, snapshot) {
-                        if (snapshot.connectionState ==
-                            ConnectionState.waiting) {
-                          return const LoadingPlaceholder();
-                        }
-                        return snapshot.data ?? const SizedBox.shrink();
-                      },
-                    ),
-                  );
-                },
+              return Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: constraints.maxWidth > 800 ? 20 : 10,
+                  vertical: 10,
+                ),
+                child: LazyLoadingWidget(
+                  index: index,
+                  loadWidget: () =>
+                      _loadWidgetData(index, context, screenWidth),
+                ),
               );
             },
           );
         },
       ),
+    );
+  }
+}
+
+// Nuevo widget para manejar lazy loading
+class LazyLoadingWidget extends StatefulWidget {
+  final int index;
+  final Future<Widget> Function() loadWidget;
+  const LazyLoadingWidget({
+    super.key,
+    required this.index,
+    required this.loadWidget,
+  });
+
+  @override
+  State<LazyLoadingWidget> createState() => _LazyLoadingWidgetState();
+}
+
+class _LazyLoadingWidgetState extends State<LazyLoadingWidget> {
+  late Future<Widget> _widgetFuture;
+  bool _isVisible = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _widgetFuture = widget.loadWidget();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return VisibilityDetector(
+      key: Key('lazy-widget-${widget.index}'),
+      onVisibilityChanged: (info) {
+        if (info.visibleFraction > 0 && !_isVisible) {
+          setState(() => _isVisible = true);
+        }
+      },
+      child: _isVisible
+          ? FutureBuilder<Widget>(
+              future: _widgetFuture,
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const LoadingPlaceholder();
+                }
+                return snapshot.data ?? const SizedBox.shrink();
+              },
+            )
+          : const SizedBox(height: 200),
     );
   }
 }
