@@ -15,8 +15,8 @@ class FormularioWidgetState extends State<FormularioWidget> {
     'nombre': '',
     'telefono': '',
     'direccion': '',
-    'barrio': '',
-    'ciudad': ''
+    'ciudad y barrio':
+        '', // Cambié este campo para que coincida con el campo de Supabase
   };
   final Set<String> camposExitosos = {};
   bool isPurchased = false; // Nueva variable para rastrear el estado del botón
@@ -35,8 +35,8 @@ class FormularioWidgetState extends State<FormularioWidget> {
       'nombre': formData['nombre'],
       'telefono': formData['telefono'],
       'direccion': formData['direccion'],
-      'barrio': formData['barrio'],
-      'ciudad': formData['ciudad'],
+      'ciudad y barrio': formData[
+          'ciudad y barrio'], // Asegúrate de que coincida con el nombre en Supabase
     }).execute();
 
     if (response.error == null) {
@@ -140,14 +140,9 @@ class FormularioWidgetState extends State<FormularioWidget> {
               ),
               const SizedBox(height: 8),
               buildTextFormField(
-                label: 'Barrio',
-                fieldKey: 'barrio',
-                inputType: TextInputType.text,
-              ),
-              const SizedBox(height: 8),
-              buildTextFormField(
-                label: 'Ciudad',
-                fieldKey: 'ciudad',
+                label: 'Ciudad y Barrio',
+                fieldKey:
+                    'ciudad y barrio', // Asegúrate de que coincida con el nombre de la columna en Supabase
                 inputType: TextInputType.text,
               ),
               const SizedBox(height: 16),

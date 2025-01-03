@@ -7,10 +7,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 var logger = Logger();
 
 const String purchaseInfoPart1 =
-    'Por favor, complete los datos del formulario para que podamos hacer llegar el pedido a su domicilio. '
-    'El pago es contra entrega únicamente para Bucaramanga y su área metropolitana, por un valor total de \$600,000, ¡domicilio gratis! '
-    'La entrega es inmediata. '
-    'pedidos en un máximo de 3 horas en la puerta de su casa. '
+    'Por favor, complete el formulario para hacer llegar el pedido a su domicilio. '
+    'Pago contra entrega solo en Bucaramanga y su área metropolitana, por un valor total de \$600,000, ¡domicilio gratis! '
+    'entrega inmediata!. '
     'Realizamos una llamada de confirmación para verificar la dirección y la disponibilidad de los equipos. '
     'si desea recoger los equipos personalmente contactenos al WhatsApp.'
     'Por favor, confirme su compra para garantizar la entrega inmediata.';
@@ -64,7 +63,7 @@ class PurchaseButtonState extends State<PurchaseButton> {
                           ),
                           const SizedBox(width: 10),
                           const Text(
-                            'Formulario De Compra',
+                            'Kit de 4 camaras 2 mpx',
                             style: TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.bold),
                           ),
@@ -191,7 +190,7 @@ class PurchaseButtonState extends State<PurchaseButton> {
       'nombre': _nameController.text,
       'telefono': _phoneController.text,
       'direccion': _addressController.text,
-      'ciudad_y_barrio': _neighborhoodController.text,
+      'ciudad y barrio': _neighborhoodController.text,
     }).execute();
 
     if (response.error == null) {

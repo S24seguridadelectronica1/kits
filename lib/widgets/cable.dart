@@ -33,7 +33,7 @@ class Cable extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Cable',
+                        '100 mts de cable utp',
                         style: TextStyle(
                           fontSize: screenWidth * 0.05, // Tamaño dinámico
                           fontWeight: FontWeight.bold,
@@ -42,8 +42,7 @@ class Cable extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       Text(
-                        'El cable permite la transmisión de señales de video a través de cables UTP, '
-                        'garantizando una señal clara y estable a larga distancia.',
+                        'cable utp cat 5e en aleacion para interior inluidos en el kit.',
                         style: TextStyle(
                           fontSize: screenWidth * 0.04, // Tamaño dinámico
                           color: Colors.grey[700],
@@ -75,7 +74,7 @@ class Cable extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Cable',
+                      '100 mts de cable utp',
                       style: TextStyle(
                         fontSize: screenWidth * 0.06, // Tamaño dinámico
                         fontWeight: FontWeight.bold,
@@ -85,8 +84,7 @@ class Cable extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     Text(
-                      'El cable permite la transmisión de señales de video a través de cables UTP, '
-                      'garantizando una señal clara y estable a larga distancia.',
+                      'cable utp cat 5e en aleacion para interior inluidos en el kit.',
                       style: TextStyle(
                         fontSize: screenWidth * 0.045, // Tamaño dinámico
                         color: Colors.grey[700],
