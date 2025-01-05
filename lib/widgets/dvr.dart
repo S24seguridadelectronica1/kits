@@ -1,34 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'purchase_button.dart'; // Asegúrate de tener el botón de compra implementado.
 
-const String dvrTitle = 'DVR iDS-7104HQHI-M1/S 4 Mpx Lite';
-const List<String> dvrImagePaths = [
-  'assets/images/2.webp',
-  'assets/images/IDS7104HQHIM1S(2).webp',
-  'assets/images/3.webp',
-  'assets/images/4.webp',
-  'assets/images/5.webp',
-  'assets/images/6.webp',
-  'assets/images/7.webp',
-  'assets/images/8.webp',
-];
-const String dvrDescription =
-    'DVR AcuSense mini 1U H.265 de 4 canales 1080P con detección de movimiento avanzada (humanos y vehículos) '
-    'y protección perimetral. Incluye compresión H.265 Pro+, soporte para cámaras IP de hasta 6 MP, '
-    'y grabación en múltiples resoluciones hasta 4mpx Lite.';
+class ProductDisplayConfig {
+  final String title;
+  final List<String> imagePaths;
+  final String description;
+  final Widget? actionButton;
+  final bool autoPlayCarousel;
+  final Duration autoPlayInterval;
+  final double aspectRatio;
 
-class DvrWidget extends StatelessWidget {
-  const DvrWidget({super.key});
+  const ProductDisplayConfig({
+    required this.title,
+    required this.imagePaths,
+    required this.description,
+    this.actionButton,
+    this.autoPlayCarousel = false,
+    this.autoPlayInterval = const Duration(seconds: 3),
+    this.aspectRatio = 1.5,
+  });
+}
+
+class ProductDisplayWidget extends StatelessWidget {
+  final ProductDisplayConfig config;
+  final Function(int)? onImageTap;
+  final EdgeInsetsGeometry? padding;
+  final BoxConstraints? constraints;
+
+  const ProductDisplayWidget({
+    required this.config,
+    this.onImageTap,
+    this.padding,
+    this.constraints,
+    super.key,
+  });
 
   void _showFullScreenImage(BuildContext context, int initialIndex) {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => FullScreenImageCarousel(
+        builder: (context) => FullScreenProductView(
           initialIndex: initialIndex,
-          imagePaths: dvrImagePaths,
-          description: dvrDescription,
+          config: config,
         ),
       ),
     );
@@ -39,121 +52,131 @@ class DvrWidget extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 
-    // Ajuste de tamaño de fuente para pantallas pequeñas, medianas y grandes
-    double titleFontSize = screenWidth * 0.03;
-    double descriptionFontSize = screenWidth * 0.04;
+    double titleFontSize = _getResponsiveFontSize(screenWidth, true);
+    double descriptionFontSize = _getResponsiveFontSize(screenWidth, false);
 
-    if (screenWidth < 600) {
-      titleFontSize = screenWidth * 0.06; // Pantallas pequeñas
-      descriptionFontSize = screenWidth * 0.03;
-    } else if (screenWidth < 1200) {
-      titleFontSize = screenWidth * 0.04; // Pantallas medianas
-      descriptionFontSize = screenWidth * 0.05;
-    }
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Texto descriptivo del DVR
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    dvrTitle,
-                    style: TextStyle(
-                      fontSize: titleFontSize,
-                      fontWeight: FontWeight.bold,
+    return Container(
+      padding: padding,
+      constraints: constraints,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      config.title,
+                      style: TextStyle(
+                        fontSize: titleFontSize,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: screenHeight * 0.02),
-                  Text(
-                    dvrDescription,
-                    style: TextStyle(
-                      fontSize: descriptionFontSize,
+                    SizedBox(height: screenHeight * 0.02),
+                    Text(
+                      config.description,
+                      style: TextStyle(
+                        fontSize: descriptionFontSize,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            SizedBox(width: screenWidth * 0.02),
-            // Carrusel de imágenes con botón de compra
-            Expanded(
-              child: Column(
-                children: [
-                  CarouselSlider.builder(
-                    itemCount: dvrImagePaths.length,
-                    itemBuilder:
-                        (BuildContext context, int index, int realIndex) {
-                      return GestureDetector(
-                        onTap: () => _showFullScreenImage(context, index),
-                        child: AspectRatio(
-                          aspectRatio: 1.5,
-                          child: Stack(
-                            fit: StackFit.expand,
-                            children: [
-                              // Imagen de la sección
-                              Image.asset(
-                                dvrImagePaths[index],
-                                fit: BoxFit.cover,
-                              ),
-                              // Ícono de expansión con color dinámico
-                              Positioned(
-                                top: 10,
-                                right: 10,
-                                child: ColorFiltered(
-                                  colorFilter: ColorFilter.mode(
-                                    _getIconColorForBackground(
-                                        dvrImagePaths[index]),
-                                    BlendMode.srcIn,
-                                  ),
-                                  child: Icon(
-                                    Icons.zoom_in,
-                                    size: screenWidth * 0.1,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      );
-                    },
-                    options: CarouselOptions(
-                      autoPlay: false,
-                      enlargeCenterPage: true,
-                      aspectRatio: 1.5,
-                      viewportFraction: 0.8,
+              SizedBox(width: screenWidth * 0.02),
+              Expanded(
+                child: Column(
+                  children: [
+                    ProductImageCarousel(
+                      config: config,
+                      onImageTap: (index) => _showFullScreenImage(context, index),
                     ),
-                  ),
-                  SizedBox(height: screenHeight * 0.1),
-                  const PurchaseButton(buttonText: '¡envio sin costo!'),
-                ],
+                    if (config.actionButton != null) ...[
+                      SizedBox(height: screenHeight * 0.1),
+                      config.actionButton!,
+                    ],
+                  ],
+                ),
               ),
-            ),
-          ],
-        ),
-      ],
+            ],
+          ),
+        ],
+      ),
     );
   }
 
-  // Método para decidir el color del ícono dependiendo del fondo de la imagen
-  Color _getIconColorForBackground(String imagePath) {
-    return Colors.white; // Color predeterminado para el ícono
+  double _getResponsiveFontSize(double screenWidth, bool isTitle) {
+    if (screenWidth < 600) {
+      return screenWidth * (isTitle ? 0.06 : 0.03);
+    } else if (screenWidth < 1200) {
+      return screenWidth * (isTitle ? 0.04 : 0.05);
+    }
+    return screenWidth * (isTitle ? 0.03 : 0.04);
   }
 }
 
-class FullScreenImageCarousel extends StatelessWidget {
-  final int initialIndex;
-  final List<String> imagePaths;
-  final String description;
+class ProductImageCarousel extends StatelessWidget {
+  final ProductDisplayConfig config;
+  final Function(int) onImageTap;
 
-  const FullScreenImageCarousel({
+  const ProductImageCarousel({
+    required this.config,
+    required this.onImageTap,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    return CarouselSlider.builder(
+      itemCount: config.imagePaths.length,
+      itemBuilder: (BuildContext context, int index, int realIndex) {
+        return GestureDetector(
+          onTap: () => onImageTap(index),
+          child: AspectRatio(
+            aspectRatio: config.aspectRatio,
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                Image.asset(
+                  config.imagePaths[index],
+                  fit: BoxFit.cover,
+                ),
+                Positioned(
+                  top: 10,
+                  right: 10,
+                  child: Icon(
+                    Icons.zoom_in,
+                    color: Colors.white,
+                    size: screenWidth * 0.1,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+      options: CarouselOptions(
+        autoPlay: config.autoPlayCarousel,
+        autoPlayInterval: config.autoPlayInterval,
+        enlargeCenterPage: true,
+        aspectRatio: config.aspectRatio,
+        viewportFraction: 0.8,
+      ),
+    );
+  }
+}
+
+class FullScreenProductView extends StatelessWidget {
+  final int initialIndex;
+  final ProductDisplayConfig config;
+
+  const FullScreenProductView({
     required this.initialIndex,
-    required this.imagePaths,
-    required this.description,
+    required this.config,
     super.key,
   });
 
@@ -167,7 +190,7 @@ class FullScreenImageCarousel extends StatelessWidget {
       body: Stack(
         children: [
           CarouselSlider.builder(
-            itemCount: imagePaths.length,
+            itemCount: config.imagePaths.length,
             itemBuilder: (BuildContext context, int index, int realIndex) {
               return Center(
                 child: InteractiveViewer(
@@ -176,7 +199,7 @@ class FullScreenImageCarousel extends StatelessWidget {
                   minScale: 1,
                   maxScale: 5,
                   child: Image.asset(
-                    imagePaths[index],
+                    config.imagePaths[index],
                     fit: BoxFit.contain,
                     width: screenWidth,
                     height: screenHeight,
@@ -198,7 +221,7 @@ class FullScreenImageCarousel extends StatelessWidget {
             left: 20,
             right: 20,
             child: Text(
-              description,
+              config.description,
               style: TextStyle(
                 color: Colors.white,
                 fontSize: screenWidth * 0.04,
@@ -216,9 +239,7 @@ class FullScreenImageCarousel extends StatelessWidget {
                 color: Colors.white,
                 size: screenWidth * 0.08,
               ),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
+              onPressed: () => Navigator.of(context).pop(),
             ),
           ),
         ],
