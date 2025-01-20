@@ -91,7 +91,8 @@ class ProductDisplayWidget extends StatelessWidget {
                   children: [
                     ProductImageCarousel(
                       config: config,
-                      onImageTap: (index) => _showFullScreenImage(context, index),
+                      onImageTap: (index) =>
+                          _showFullScreenImage(context, index),
                     ),
                     if (config.actionButton != null) ...[
                       SizedBox(height: screenHeight * 0.1),

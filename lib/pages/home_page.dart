@@ -203,14 +203,7 @@ class HomePage extends StatelessWidget {
         break;
       case 16:
         widget = const llamada_widget.LlamadaButton();
-        break;
-      case 17:
-        widget = ElevatedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, '/kit_8');
-          },
-          child: const Text('Ir al Kit 8'),
-        );
+
         break;
       default:
         widget = const SizedBox.shrink();
