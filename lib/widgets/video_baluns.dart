@@ -24,13 +24,25 @@ class Videobaluns extends StatelessWidget {
             return Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(8.0),
-                  child: Image.asset(
-                    imagePath,
-                    width: screenWidth * 0.4,
-                    height: screenWidth * 0.3,
-                    fit: BoxFit.cover,
+                GestureDetector(
+                  onTap: () {
+                    // Al hacer clic en la imagen, se abre la imagen en pantalla completa
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            FullScreenImagePage(imagePath: imagePath),
+                      ),
+                    );
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(
+                      imagePath,
+                      width: screenWidth * 0.4,
+                      height: screenWidth * 0.3,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 const SizedBox(width: 16),
@@ -43,7 +55,7 @@ class Videobaluns extends StatelessWidget {
                         style: TextStyle(
                           fontSize: screenWidth * 0.05,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black,
+                          color: const Color.fromARGB(255, 241, 220, 220),
                         ),
                       ),
                       const SizedBox(height: 16),
@@ -51,7 +63,7 @@ class Videobaluns extends StatelessWidget {
                         description,
                         style: TextStyle(
                           fontSize: screenWidth * 0.04,
-                          color: Colors.grey[700],
+                          color: const Color.fromRGBO(175, 170, 170, 1),
                         ),
                       ),
                     ],
@@ -63,13 +75,25 @@ class Videobaluns extends StatelessWidget {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(8.0),
-                  child: Image.asset(
-                    imagePath,
-                    width: screenWidth * 0.8,
-                    height: screenWidth * 0.5,
-                    fit: BoxFit.cover,
+                GestureDetector(
+                  onTap: () {
+                    // Al hacer clic en la imagen, se abre la imagen en pantalla completa
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            FullScreenImagePage(imagePath: imagePath),
+                      ),
+                    );
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(
+                      imagePath,
+                      width: screenWidth * 0.8,
+                      height: screenWidth * 0.5,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -81,7 +105,7 @@ class Videobaluns extends StatelessWidget {
                       style: TextStyle(
                         fontSize: screenWidth * 0.06,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                        color: const Color.fromARGB(255, 250, 239, 239),
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -100,6 +124,46 @@ class Videobaluns extends StatelessWidget {
             );
           }
         },
+      ),
+    );
+  }
+}
+
+class FullScreenImagePage extends StatelessWidget {
+  final String imagePath;
+
+  const FullScreenImagePage({super.key, required this.imagePath});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.close),
+            onPressed: () {
+              Navigator.pop(context); // Cierra la vista de pantalla completa
+            },
+          ),
+        ],
+      ),
+      body: GestureDetector(
+        onTap: () {
+          Navigator.pop(context); // Cierra la vista de pantalla completa
+        },
+        child: Center(
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(0.0), // Sin bordes redondeados
+            child: Image.asset(
+              imagePath,
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              fit: BoxFit.cover, // La imagen se ajusta al tamaño de la pantalla
+            ),
+          ),
+        ),
       ),
     );
   }

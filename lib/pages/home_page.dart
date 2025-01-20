@@ -58,7 +58,7 @@ class HomePage extends StatelessWidget {
           descripcion: 'tecnologia acusense deteccion humanos y vehiculos!',
           textoAdicional:
               'kit de 4 cámaras Full HD 1080p (2mpx) de HIKVISION con grabacion a 4 mpx lite, ideales para todo tipo de negocio, casa u oficina.',
-          precio: '\$199.99',
+          precio: '\$780.000',
         );
         break;
       case 1:
@@ -91,13 +91,15 @@ class HomePage extends StatelessWidget {
         );
         break;
       case 3:
-           widget = const Garantia(
-        message: 'Garantía de 2 años para cámaras de seguridad.',
-        backgroundColor: Colors.green, // O cualquier otro color
-      );
+        widget = const Garantia(
+          message:
+              'Garantía de 1 año para cámaras de seguridad y video grabador (DVR).',
+          backgroundColor:
+              Color.fromARGB(164, 255, 0, 34), // O cualquier otro color
+        );
         break;
       case 4:
-         widget = ProductDisplayWidget(
+        widget = ProductDisplayWidget(
           config: ProductDisplayConfig(
             title: 'DS-2CE56D0T-IRPF(C)',
             imagePaths: [
@@ -110,9 +112,10 @@ class HomePage extends StatelessWidget {
               'assets/images/15.webp',
               'assets/images/16.webp',
               'assets/images/17.webp',
-              'assets/images/DS-2CE56D0T-IRPF(C).webp',            ],
+              'assets/images/DS-2CE56D0T-IRPF(C).webp',
+            ],
             description:
-    '4 Cámaras Domo TURBOHD 1080p de HIKVISION con lente de 2.8 mm y visión nocturna inteligente EXIR de hasta 20 mts.\n\n',
+                '4 Cámaras Domo TURBOHD 1080p de HIKVISION con lente de 2.8 mm y visión nocturna inteligente EXIR de hasta 20 mts.\n\n',
             actionButton: const PurchaseButton(buttonText: '¡envio sin costo!'),
             autoPlayCarousel: false,
             aspectRatio: 1.5,
@@ -123,22 +126,23 @@ class HomePage extends StatelessWidget {
         break;
       case 5:
         widget = const Garantia(
-        message: 'Garantía Limitada de 3 años para disco duro.',
-        backgroundColor: Colors.green, // O cualquier otro color
-      );
+          message: 'Garantía Limitada de 3 años para disco duro.',
+          backgroundColor: Color.fromARGB(164, 255, 0, 34),
+        );
         break;
       case 6:
         widget = ProductDisplayWidget(
           config: ProductDisplayConfig(
             title: 'Disco duro para videovigilancia WD Purple - 1 TB',
             imagePaths: [
-               'assets/images/18.webp',
-  'assets/images/19.webp',
-  'assets/images/20.webp',
-  'assets/images/21.webp',
-  'assets/images/22.webp',            ],
+              'assets/images/18.webp',
+              'assets/images/19.webp',
+              'assets/images/20.webp',
+              'assets/images/21.webp',
+              'assets/images/22.webp',
+            ],
             description:
-    'Disco duro WD Purple 1 TB para videovigilancia, grabación 24/7, tecnología AllFrame, velocidad 110 MB/s, interfaz SATA, caché 64 MB, soporta 64 cámaras.',
+                'Disco duro WD Purple 1 TB para videovigilancia, grabación 24/7, tecnología AllFrame, velocidad 110 MB/s, interfaz SATA, caché 64 MB, soporta 64 cámaras.',
             actionButton: const PurchaseButton(buttonText: '¡envio sin costo!'),
             autoPlayCarousel: false,
             aspectRatio: 1.5,
@@ -149,40 +153,44 @@ class HomePage extends StatelessWidget {
         break;
       case 7:
         widget = const Garantia(
-        message: 'Acesorios del Kit.',
-        backgroundColor: Colors.green, // O cualquier otro color
-      );
+          message: 'Acesorios del Kit.',
+          backgroundColor: Color.fromARGB(164, 255, 0, 34),
+        );
         break;
       case 8:
-         widget = Videobaluns(
+        widget = Videobaluns(
           title: '4 Fuentes De Energia 12v - 1amp',
-          description: 'fuente de alimentación de AC 110- 240v, 12 voltios a 1 amperio de alta calidad, conector de alimentación de 2.1mm, con led indicador de funcionamiento, el articulo puede ser ligeramente distinto al de la foto.',
+          description:
+              'fuente de alimentación de AC 110- 240v, 12 voltios a 1 amperio de alta calidad, conector de alimentación de 2.1mm, con led indicador de funcionamiento, el articulo puede ser ligeramente distinto al de la foto.',
           imagePath: 'assets/images/23.webp',
         );
       case 9:
-         widget = Videobaluns(
+        widget = Videobaluns(
           title: '4 pares de Video baluns pasivos',
-          description: 'VIDEO BALUM TURBO 4 EN 1 transmisión de señales de video a través de cables UTP, señal clara y estable a larga distancia.',
+          description:
+              'VIDEO BALUM TURBO 4 EN 1 transmisión de señales de video a través de cables UTP, señal clara y estable a larga distancia.',
           imagePath: 'assets/images/25.webp',
         );
         break;
       case 10:
         widget = Videobaluns(
           title: '4 pares de Borneras',
-          description: '4 pares de borneras electricas para la conexión y distribución de energia de las camaras.',
+          description:
+              '4 pares de borneras electricas para la conexión y distribución de energia de las camaras.',
           imagePath: 'assets/images/23.webp',
         );
       case 11:
         widget = Videobaluns(
           title: '100 mts de cable utp',
-          description: 'cable utp cat 5e en aleacion para interior inluidos en el kit.',
+          description:
+              'cable utp cat 5e en aleacion para interior inluidos en el kit.',
           imagePath: 'assets/images/26.webp',
         );
       case 12:
         widget = const Garantia(
-        message: 'Paga en casa al recibir el producto.',
-        backgroundColor: Color.fromRGBO(2, 3, 2, 1), // O cualquier otro color
-      );
+          message: 'Paga en casa al recibir el producto.',
+          backgroundColor: Color.fromRGBO(2, 3, 2, 1), // O cualquier otro color
+        );
         break;
       case 13:
         widget = const Price();
@@ -219,7 +227,7 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(33, 55, 255, 0.588),
+        backgroundColor: const Color.fromRGBO(58, 77, 255, 0.959),
         title: const TituloWidget(
           tituloText: 'Servicio contra entrega + envio gratis!',
         ),

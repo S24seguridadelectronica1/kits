@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kit_de_camaras2/widgets/purchase_button.dart';
+import 'package:kits/widgets/purchase_button.dart';
 
 class Encabezado extends StatelessWidget {
   final String imagePath;

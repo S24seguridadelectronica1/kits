@@ -102,20 +102,18 @@ class FormularioWidgetState extends State<FormularioWidget> {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    'assets/images/1.webp', // Ruta de la imagen en assets
-                    width: 50, // Tamaño de la imagen
-                    height: 50,
-                  ),
                   const SizedBox(width: 8),
                   Expanded(
                     child: const Text(
-                      'Usted se encuentra en el proceso de compra. Por favor diligencie el formulario con su dirección, barrio y ciudad para hacer llegar su pedido a la puerta de su casa.',
+                      'Por favor, complete el formulario para hacer llegar el pedido a su domicilio. '
+                      'Pago contra entrega solo en Bucaramanga y su área metropolitana, por un valor total de \$780,000, ¡domicilio gratis! '
+                      'entrega inmediata!. '
+                      'Realizamos una llamada de confirmación para verificar la dirección y la disponibilidad de los equipos. ',
                       style:
                           TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                       textAlign: TextAlign.start,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 2,
+                      overflow: TextOverflow
+                          .visible, // Cambié esto para que el texto no se recorte
                     ),
                   ),
                 ],
@@ -147,8 +145,14 @@ class FormularioWidgetState extends State<FormularioWidget> {
               ),
               const SizedBox(height: 16),
               const Text(
-                'Nota importante: Haremos una llamada para confirmar el envío de las cámaras. El domicilio es sin costo, el pago es contraentrega, y por favor asegúrese de contar con el dinero antes de presionar "Comprar". Entregamos los equipos probados en el lugar, siempre y cuando haya conexión a energía.',
-                style: TextStyle(fontSize: 14, color: Colors.black54),
+                'Entrega de equipos en los siguientes horarios:\n\n'
+                'De lunes a viernes: de 8:00 a.m. a 6:00 p.m. (jornada continua).\n'
+                'Sábados: de 8:00 a.m. a 1:00 p.m.\n'
+                'Domingos y festivos no hacemos entregas.\n\n'
+                'Recibimos pagos en efectivo, Nequi o Bancolombia.',
+                style: TextStyle(
+                    fontSize: 14,
+                    color: Color.from(alpha: 0.781, red: 1, green: 1, blue: 1)),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 16),
@@ -158,13 +162,20 @@ class FormularioWidgetState extends State<FormularioWidget> {
                       ? null
                       : submitForm, // Desactivar si ya se compró
                   style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        isPurchased ? Colors.green : null, // Cambiar color
+                    backgroundColor: isPurchased
+                        ? Colors.green
+                        : Colors.blue, // Cambiar a azul
+                    minimumSize: Size(300, 50), // Aumentar el tamaño del botón
+                    textStyle: TextStyle(
+                        fontSize: 18,
+                        fontWeight:
+                            FontWeight.bold), // Aumentar el tamaño de la fuente
                   ),
                   child: Text(
-                      isPurchased ? 'Comprado' : 'Comprar'), // Cambiar texto
+                    isPurchased ? 'Comprado' : 'Comprar', // Cambiar texto
+                  ),
                 ),
-              ),
+              )
             ],
           ),
         ),

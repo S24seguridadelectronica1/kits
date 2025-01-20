@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Mi App de Cámaras de Seguridad',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData.dark(), // Solo tema oscuro
       initialRoute: '/', // Ruta inicial
       routes: {
         '/': (context) => const HomePage(), // Página principal
