@@ -164,7 +164,7 @@ class Encabezado extends StatelessWidget {
                     Text(
                       'Precio: $precio',
                       style: const TextStyle(
-                        fontSize: 18.0,
+                        fontSize: 28.0,
                         fontWeight: FontWeight.bold,
                         color: Colors.green,
                       ),
@@ -323,7 +323,7 @@ class Encabezado extends StatelessWidget {
               child: Text(
                 'Precio: $precio',
                 style: const TextStyle(
-                  fontSize: 16.0,
+                  fontSize: 30.0,
                   fontWeight: FontWeight.bold,
                   color: Colors.green,
                 ),

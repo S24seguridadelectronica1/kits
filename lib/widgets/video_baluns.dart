@@ -62,9 +62,8 @@ class Videobaluns extends StatelessWidget {
                       Text(
                         description,
                         style: TextStyle(
-                          fontSize: screenWidth * 0.04,
-                          color: const Color.fromRGBO(175, 170, 170, 1),
-                        ),
+                            fontSize: screenWidth * 0.04,
+                            color: const Color(0xFFDFD1D1)),
                       ),
                     ],
                   ),
@@ -113,9 +112,8 @@ class Videobaluns extends StatelessWidget {
                     Text(
                       description,
                       style: TextStyle(
-                        fontSize: screenWidth * 0.045,
-                        color: Colors.grey[700],
-                      ),
+                          fontSize: screenWidth * 0.045,
+                          color: const Color(0xFFDFD1D1)),
                       textAlign: TextAlign.center,
                     ),
                   ],
@@ -138,7 +136,7 @@ class FullScreenImagePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: const Color.fromARGB(0, 236, 224, 224),
         elevation: 0,
         actions: [
           IconButton(
