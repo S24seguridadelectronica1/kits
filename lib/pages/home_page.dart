@@ -169,7 +169,7 @@ class HomePage extends StatelessWidget {
           title: '4 pares de Video baluns pasivos',
           description:
               'VIDEO BALUM TURBO 4 EN 1 transmisión de señales de video a través de cables UTP, señal clara y estable a larga distancia.',
-          imagePath: 'assets/images/25.webp',
+          imagePath: 'assets/images/24.webp',
         );
         break;
       case 10:
@@ -177,7 +177,7 @@ class HomePage extends StatelessWidget {
           title: '4 pares de Borneras',
           description:
               '4 pares de borneras electricas para la conexión y distribución de energia de las camaras.',
-          imagePath: 'assets/images/23.webp',
+          imagePath: 'assets/images/25.webp',
         );
       case 11:
         widget = Videobaluns(
