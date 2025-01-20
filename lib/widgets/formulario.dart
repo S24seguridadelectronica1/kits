@@ -144,18 +144,6 @@ class FormularioWidgetState extends State<FormularioWidget> {
                 inputType: TextInputType.text,
               ),
               const SizedBox(height: 16),
-              const Text(
-                'Entrega de equipos en los siguientes horarios:\n\n'
-                'De lunes a viernes: de 8:00 a.m. a 6:00 p.m. (jornada continua).\n'
-                'Sábados: de 8:00 a.m. a 1:00 p.m.\n'
-                'Domingos y festivos no hacemos entregas.\n\n'
-                'Recibimos pagos en efectivo, Nequi o Bancolombia.',
-                style: TextStyle(
-                    fontSize: 14,
-                    color: Color.from(alpha: 0.781, red: 1, green: 1, blue: 1)),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 16),
               Center(
                 child: ElevatedButton(
                   onPressed: isPurchased
@@ -175,7 +163,19 @@ class FormularioWidgetState extends State<FormularioWidget> {
                     isPurchased ? 'Comprado' : 'Comprar', // Cambiar texto
                   ),
                 ),
-              )
+              ),
+              const SizedBox(height: 16),
+              const Text(
+                'Entrega de equipos en los siguientes horarios:\n\n'
+                'De lunes a viernes: de 8:00 a.m. a 6:00 p.m. (jornada continua).\n'
+                'Sábados: de 8:00 a.m. a 1:00 p.m.\n'
+                'Domingos y festivos no hacemos entregas.\n\n'
+                'Recibimos pagos en efectivo, Nequi o Bancolombia.',
+                style: TextStyle(
+                    fontSize: 14,
+                    color: Color.from(alpha: 0.781, red: 1, green: 1, blue: 1)),
+                textAlign: TextAlign.center,
+              ),
             ],
           ),
         ),
