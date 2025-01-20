@@ -262,7 +262,7 @@ class PurchaseButtonState extends State<PurchaseButton> {
   }
 }
 
-class LlamadaButton extends StatelessWidget {
+class LlamadaButton extends StatefulWidget {
   final double textSize;
 
   const LlamadaButton({
@@ -271,42 +271,101 @@ class LlamadaButton extends StatelessWidget {
   });
 
   @override
+  State<LlamadaButton> createState() => _LlamadaButtonState();
+}
+
+class _LlamadaButtonState extends State<LlamadaButton>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  bool isAnimating = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(milliseconds: 200),
+      vsync: this,
+    );
+
+    _controller.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        _controller.reverse();
+      }
+    });
+
+    // Iniciar animación periódica
+    _startPeriodicAnimation();
+  }
+
+  void _startPeriodicAnimation() {
+    Future.delayed(const Duration(seconds: 2), () {
+      if (mounted) {
+        _controller.forward();
+        _startPeriodicAnimation();
+      }
+    });
+  }
+
+  Future<void> _makePhoneCall() async {
+    final Uri phoneUri = Uri.parse('tel:+573046615865');
+    if (await canLaunchUrl(phoneUri)) {
+      await launchUrl(phoneUri);
+    } else {
+      throw 'No se pudo realizar la llamada.';
+    }
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () async {
-        final Uri phoneUri = Uri.parse('tel:+573046615865');
-        if (await canLaunchUrl(phoneUri)) {
-          await launchUrl(phoneUri);
-        } else {
-          throw 'No se pudo realizar la llamada.';
-        }
-      },
-      style: ElevatedButton.styleFrom(
-        backgroundColor: const Color.fromRGBO(255, 255, 255, 1), // Fondo blanco
-        padding: const EdgeInsets.symmetric(horizontal: 8),
+    return Container(
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withAlpha(77),
+            spreadRadius: 2,
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
       ),
-      child: FittedBox(
-        fit: BoxFit.scaleDown,
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              Icons.phone,
-              size: 30, // Tamaño del ícono
-              color: const Color.fromARGB(
-                  202, 255, 1, 1), // Cambiar el color del ícono aquí
-            ),
-            SizedBox(width: 8), // Espacio entre el ícono y el número
-            Text(
-              '+573046615865', // Número de teléfono
-              style: TextStyle(
-                fontSize: textSize,
-                fontWeight: FontWeight.bold,
-                color: const Color.fromARGB(202, 255, 1, 1), // Color del texto
+      child: AnimatedBuilder(
+        animation: _controller,
+        builder: (context, child) {
+          return Transform.translate(
+            offset: Offset(_controller.value * 4.0, 0),
+            child: ElevatedButton(
+              onPressed: _makePhoneCall,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.red,
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                elevation: 4,
+              ),
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.phone,
+                      size: 24,
+                      color: Colors.red.shade600,
+                    ),
+                  ],
+                ),
               ),
             ),
-          ],
-        ),
+          );
+        },
       ),
     );
   }

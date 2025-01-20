@@ -161,6 +161,8 @@ class FormularioWidgetState extends State<FormularioWidget> {
                   ),
                   child: Text(
                     isPurchased ? 'Comprado' : 'Comprar', // Cambiar texto
+                    style: const TextStyle(
+                        color: Colors.white), // Color blanco para el texto
                   ),
                 ),
               ),
