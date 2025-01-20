@@ -26,7 +26,6 @@ class Videobaluns extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                    // Al hacer clic en la imagen, se abre la imagen en pantalla completa
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -62,8 +61,9 @@ class Videobaluns extends StatelessWidget {
                       Text(
                         description,
                         style: TextStyle(
-                            fontSize: screenWidth * 0.04,
-                            color: const Color(0xFFDFD1D1)),
+                          fontSize: screenWidth * 0.04,
+                          color: const Color(0xFFDFD1D1),
+                        ),
                       ),
                     ],
                   ),
@@ -76,7 +76,6 @@ class Videobaluns extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                    // Al hacer clic en la imagen, se abre la imagen en pantalla completa
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -112,8 +111,9 @@ class Videobaluns extends StatelessWidget {
                     Text(
                       description,
                       style: TextStyle(
-                          fontSize: screenWidth * 0.045,
-                          color: const Color(0xFFDFD1D1)),
+                        fontSize: screenWidth * 0.045,
+                        color: const Color(0xFFDFD1D1),
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   ],
@@ -134,31 +134,36 @@ class FullScreenImagePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(0, 236, 224, 224),
         elevation: 0,
         actions: [
           IconButton(
-            icon: Icon(Icons.close),
+            icon: const Icon(Icons.close),
             onPressed: () {
-              Navigator.pop(context); // Cierra la vista de pantalla completa
+              Navigator.pop(context);
             },
           ),
         ],
       ),
       body: GestureDetector(
         onTap: () {
-          Navigator.pop(context); // Cierra la vista de pantalla completa
+          Navigator.pop(context);
         },
         child: Center(
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(0.0), // Sin bordes redondeados
-            child: Image.asset(
-              imagePath,
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              fit: BoxFit.cover, // La imagen se ajusta al tamaño de la pantalla
+          child: AspectRatio(
+            aspectRatio: screenWidth /
+                screenHeight, // Mantiene la proporción de la imagen
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: Image.asset(
+                imagePath,
+                fit: BoxFit.contain, // Ajusta la imagen sin recortarla
+              ),
             ),
           ),
         ),

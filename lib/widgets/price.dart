@@ -120,7 +120,7 @@ class Price extends StatelessWidget {
                                   '4 camaras de 2mpx, grabacion de 4 mpx lite + inteligencia artifical X ',
                               style: TextStyle(
                                 fontSize: screenWidth * 0.04, // Tamaño dinámico
-                                color: Colors.grey[700],
+                                color: const Color.fromRGBO(233, 207, 207, 1),
                               ),
                             ),
                             TextSpan(
@@ -139,7 +139,7 @@ class Price extends StatelessWidget {
                               text: '.',
                               style: TextStyle(
                                 fontSize: screenWidth * 0.04,
-                                color: Colors.grey[700],
+                                color: const Color.fromRGBO(233, 207, 207, 1),
                               ),
                             ),
                           ],
